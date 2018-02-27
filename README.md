@@ -1,4 +1,4 @@
 # ForEachStore
 Itec 325 Group Poject
-
-Chase Brittain
+Names: Jonathan Miller, Jeff Reoch, Chase Brittain
+Video Game Store
