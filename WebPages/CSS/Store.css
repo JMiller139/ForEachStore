@@ -2,4 +2,24 @@ table#filterTable{
   margin: auto;
   margin-top: 20px;
   background-color: black;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+td#searchBarCell{
+  padding-left: 100px;
+}
+
+table#gamesTable{
+  margin: auto;
+  margin-top: 25px;
+  border: 1px solid black;
+}
+
+table#gamesTable td{
+  height: 175px;
+  width: 225px;
+  border: 1px solid black;
 }

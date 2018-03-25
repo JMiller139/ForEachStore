@@ -62,12 +62,59 @@
       </td>
 
       <td>
-        <button>Search</button>
+        <button id='filterSearchButton'>Search</button>
       </td>
 
-      <td>
+      <td id='searchBarCell'>
         <input type="text" placeholder="Search..">
+        <button id='searchBarButton'>Icon</button>
       </td>
+
+    </tr>
+  </table>
+
+  <table id='gamesTable'>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
     </tr>
   </table>
 
