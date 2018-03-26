@@ -1,0 +1,29 @@
+html{
+  margin-top: 20px;
+}
+.welcomelable{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+.catagories{
+  margin-left: 50px;
+  font-size: 25px;
+}
+div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    width: 75%;
+    margin-left: 150px;
+}
+
+div.scrollmenu a {
+    display: inline-block;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+    background-color: green;
+}
