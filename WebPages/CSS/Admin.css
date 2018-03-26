@@ -1,0 +1,17 @@
+h1#adminHeader{
+  text-align: center;
+}
+
+p#adminRadio{
+  text-align: center;
+}
+
+textarea#adminText{
+  display: block;
+  margin: auto;
+}
+
+input#adminSubmit{
+  display: block;
+  margin: auto;
+}
