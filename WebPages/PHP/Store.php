@@ -44,41 +44,21 @@
       <td><img src="https://vignette.wikia.nocookie.net/lotr/images/2/2b/Middle-earth_Shadow_of_War.jpg/revision/latest?cb=20170302153716" alt="Shadow of War" height="175" width="225>"</td></td>
     </tr>
     <tr>
-      <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTaXVL-hk0eEDHXvfBJv2uqJ6msPE0irZqtA9i5OnNTQ-IclG" alt="Forza Horizon 3" height="175" width="225>"</td></td>
-      <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdVD6yBci8ko-txo0sFioPFeV9kie3LQPZo7frQO5MMX2I8vyI" alt="Borderlands 2" height="175" width="225>"</td></td>
-      <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvXoarPvljhJn28MKOTGkXo1_zt0-5AT0thG-SXGDqahjvAG2t8g" alt="Overwatch" height="175" width="225>"</td></td>
-      <td><img src="https://bioshockinfinite.ghoststorygames.com/site/uploads/sites/3/synopsis_graphic01-323x254.jpg" alt="Bioshock Infinite" height="175" width="225>"</td></td>
-      <td><img src="https://static.gamespot.com/uploads/scale_tiny/1197/11970954/3246063-aco_pack_agnostic_bxsht2d_e3_170611_330pm_us.jpg" alt="Assassins Creed Origins" height="175" width="225>"</td></td>
+      <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTaXVL-hk0eEDHXvfBJv2uqJ6msPE0irZqtA9i5OnNTQ-IclG" alt="Forza Horizon 3" height="175" width="225"</td></td>
+      <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdVD6yBci8ko-txo0sFioPFeV9kie3LQPZo7frQO5MMX2I8vyI" alt="Borderlands 2" height="175" width="225"</td></td>
+      <td><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvXoarPvljhJn28MKOTGkXo1_zt0-5AT0thG-SXGDqahjvAG2t8g" alt="Overwatch" height="175" width="225"</td></td>
+      <td><img src="https://bioshockinfinite.ghoststorygames.com/site/uploads/sites/3/synopsis_graphic01-323x254.jpg" alt="Bioshock Infinite" height="175" width="225"</td></td>
+      <td><img src="https://static.gamespot.com/uploads/scale_tiny/1197/11970954/3246063-aco_pack_agnostic_bxsht2d_e3_170611_330pm_us.jpg" alt="Assassins Creed Origins" height="175" width="225"</td></td>
     </tr>
     <tr>
-      <td><img src="" alt="" height="" width=""></td>
-      <td><img src="" alt="" height="" width=""></td>
-      <td><img src="" alt="" height="" width=""></td>
-      <td><img src="" alt="" height="" width=""></td>
-      <td><img src="" alt="" height="" width=""></td>
+      <td><img src="https://static.giantbomb.com/uploads/original/32/329701/2993791-survival-battle-royale-darwin-project-commences-pc-open-beta-with-mixer-features-1.jpg" alt="The Darwin Project" height="175" width="225"></td>
+      <td><img src="https://static.quizur.com/i/b/5702fe733d3b39.92828718mortal-kombat-x-enhanced-online-beta-header.jpg" alt="" height="175" width="225"></td>
+      <td><img src="https://sslh.ulximg.com/image/740x493/cover/1522167121_baf1a248c1fd96bd266e2c743127f254.jpg/91d447a8443b7bf3022a15ec049ea9cd/1522167121_4e3b05014fe38ed4df4dacf393e16ef8.jpg" alt="Far Cry 5" height="175" width="225"></td>
+      <td><img src="http://i.playground.ru/i/68/19/82/00/blog/icon.400x225.jpg?v1" alt="Outlast 2" height="175" width="225"></td>
+      <td><img src="http://i.playground.ru/i/95/18/22/00/blog/icon.400x225.jpg?v1" alt="Space Engineers" height="175" width="225"></td>
     </tr>
     <!-- <img src="" alt="" height="" width=""> -->
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+
   </table>
 
 </body>
