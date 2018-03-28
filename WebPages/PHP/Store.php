@@ -1,3 +1,5 @@
+<?php require_once('Store-Functions.php'); ?>
+<?php require_once('ForEachStore_Constants.php'); ?>
 
 <!DOCTYPE html>
 <html>
@@ -11,60 +13,14 @@
   <!-- BANNER NEEDS TO BE INSERTED -->
 
   <table id='filterTable'>
-    <form>
-      <tr>
-        <td>
-          <select name='genreDropDown'>
-            <option value='freeToPlay'>Free to Play</option>
-            <option value='action'>Action</option>
-            <option value='adventure'>Adventure</option>
-            <option value='casual'>Casual</option>
-            <option value='indie'>Indie</option>
-            <option value='massivelyMultiplayer'>Massively Multiplayer</option>
-            <option value='racing'>Racing</option>
-            <option value='rpg'>RPG</option>
-            <option value='simulation'>Simulation</option>
-            <option value='sports'>Sports</option>
-            <option value='strategy'>Strategy</option>
-          </select>
-        </td>
-
-        <td>
-          <select name='ratingDropDown'>
-            <option value='eC'>eC</option>
-            <option value='E'>E</option>
-            <option value='E10+'>E 10+</option>
-            <option value='T'>T</option>
-            <option value='M'>M</option>
-            <option value='A'>A</option>
-            <option value='RP'>RP</option>
-          </select>
-        </td>
-
-        <td>
-          <select name='priceDropDown'>
-            <option value='zeroToFive'>$0.00 - $5.00</option>
-            <option value='fiveToTen'>$5.00 - $10.00</option>
-            <option value='tenToTwenty'>$10.00 - $20.00</option>
-            <option value='twentyToThirty'>$20.00 - $30.00</option>
-            <option value='thirtyToForty'>$30.00 - $40.00</option>
-            <option value='fortToFifty'>$40.00 - $50.00</option>
-            <option value='fiftyToSixty'>$50.00 - $60.00</option>
-            <option value='zeroToSixty'>$0.00 - $60.00</option>
-          </select>
-        </td>
-
-        <td>
-          <select name='platformDropDown'>
-            <option value='pc'>PC</option>
-            <option value='ps4'>PS4</option>
-            <option value='xbox'>XBOX ONE</option>
-          </select>
-        </td>
-
-        <td>
-          <input type='submit' name='filteSearchButton' id='filterSearchBarButton' value='Search'>
-        </td>
+    <!-- each dropdown needs to have a defualt value -->
+    <tr>
+      <form id='filterDropdownMenus'>
+        <td><?php echo dropdown("genreDropDown", $GLOBALS['genreDropDownOptions'], false); ?></td>
+        <td><?php echo dropdown("ratingDropDown", $GLOBALS['ratingDropDownOptions'], false); ?></td>
+        <td><?php echo dropdown("priceDropDown", $GLOBALS['priceDropDownOptions'], false); ?></td>
+        <td><?php echo dropdown("platformDropDown", $GLOBALS['platformDropDownOptions'], false); ?></td>
+        <td><input type='submit' name='filteSearchButton' id='filterSearchBarButton' value='Search'></td>
       </form>
 
       <td id='searchBarCell'>
@@ -73,11 +29,13 @@
           <input type='submit' name='searchBarButton' id='searchBarButton' value='Icon'>
         </form>
       </td>
-
     </tr>
   </table>
 
+
   <table id='gamesTable'>
+    <!-- php should generate this table according to the amount of games
+         returned from the query -->
     <tr>
       <td></td>
       <td></td>

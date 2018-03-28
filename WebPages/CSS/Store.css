@@ -8,17 +8,17 @@ table#filterTable{
   padding-bottom: 5px;
 }
 
-td#searchBarCell{
+#searchBarCell{
   padding-left: 200px;
 }
 
-table#gamesTable{
+#gamesTable{
   margin: auto;
   margin-top: 25px;
   border: 1px solid black;
 }
 
-table#gamesTable td{
+#gamesTable td{
   height: 175px;
   width: 225px;
   border: 1px solid black;
