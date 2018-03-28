@@ -3,45 +3,54 @@ body {
   font-size: 15px;
   padding: 8px;
 }
-.checkoutPad,
-.infoPad {
+.checkoutPad{
   padding: 0 30px;
 }
+.cardPad{
+  padding: 0 30px;
+  float: left;
+  display: inline-block;
+}
+.billingPad{
+  padding: 0 300px;
+  float: right;
+  display: inline-block;
+}
 
-.checkoutTable
+.container
  {
   background-color: #DEE4E3;
   padding: 5px 20px 15px 20px;
   border: 1px solid lightgrey;
   border-radius: 10px;
+  width: 400px;
+  float: left;
+  display: inline-block;
+}
+.dropdownContainer {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
 }
 .paymentTable{
   border: 1px solid grey;
   border-radius: 0px;
   border-radius: 5px;
-  width: 500px;
-  float: left;
-  display: inline-block;
-  border-radius: 4px;
-  font-family: Arial;
-  font-size: 16px;
-  padding: 8px;
-}
-.infoTable{
-  border: 1px solid grey;
-  border-radius: 0px;
-  border-radius: 5px;
-  width: 500px;
+  width: 1300px;
+  height: 800px;
   float: right;
   display: inline-block;
   border-radius: 4px;
   font-family: Arial;
   font-size: 16px;
   padding: 8px;
-  font-style: normal;
 }
 input[type="text"] {
-    width: 350px;
+  width: 200%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 hr {
   border: 1px solid grey;
@@ -61,7 +70,7 @@ label {
   background-color: #049DFC;
   color: white;
   padding: 12px;
-  margin: 10px 0;
+  margin: 120px 0;
   border: none;
   width: 100%;
   border-radius: 3px;

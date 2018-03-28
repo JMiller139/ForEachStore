@@ -9,7 +9,7 @@
 
 <h2>Checkout</h2>
   <div class="checkoutPad">
-    <div class="checkoutTable">
+    <div class="container">
       <h4>Cart</h4>
       <p><a href=" ">Grand Theft Auto 5</a> <span class="price">$59.99</span></p>
       <p><a href=" ">Border Lands 2</a> <span class="price">$39.99</span></p>
@@ -19,20 +19,26 @@
       <p>Total <span class="price" style="color:red"><b>$194.98</b></span></p>
     </div>
   </div>
-</div>
-<div class = "infoPad">
-  <div class = "paymentTable">
-    <h3>Payment Info</h3>
-    <label for="cname">Name on Card</label>
-    <input type="text" id="cname" name="cardname" placeholder="Bob Alice">
-    <label for="ccnum">Credit card number</label>
-    <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-    <label for="expmonth">Exp Month</label>
-    <input type="text" id="expmonth" name="expmonth" placeholder="September">
-  </div>
-</div>
-  <div class = "infoPad">
-    <div class = "infoTable">
+  <div class = "cardPad">
+    <div class = "paymentTable">
+      <div class = "cardPad">
+        <h3>Payment Info</h3>
+        <div class = "dropdownContainer">
+          <select>
+            <option value="Visa">Visa</option>
+            <option value="Master Card">Master Card</option>
+            <option value="Discover">Discover</option>
+            <option value="American Express">American Express</option>
+          </select>
+        </div>
+        <label for="cname">Name on Card</label>
+        <input type="text" id="cname" name="cardname" placeholder="Bob Alice"autofocus>
+        <label for="ccnum">Credit card number</label>
+        <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+        <label for="expmonth">Exp Month</label>
+        <input type="text" id="expmonth" name="expmonth" placeholder="September">
+      </div>
+    <div class = "billingPad">
       <h3>Billing Address</h3>
       <label for="fname">Full Name</label>
       <input type="text" id="fname" name="firstname" placeholder="Bob Alice">
@@ -47,7 +53,9 @@
       <label for="zip">Zip</label>
       <input type="text" id="zip" name="zip" placeholder="24141">
     </div>
+      <input type="submit" value="Complete Checkout" class="button">
+    </div>
   </div>
-  <input type="submit" value="Complete Checkout" class="button">
+</form>
 </body>
 </html>

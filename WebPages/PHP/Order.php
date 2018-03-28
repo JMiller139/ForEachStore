@@ -5,7 +5,8 @@
   <title>Order</title>
 </head>
 <body>
-  <h2>Review Order</h2>
+  <form action = "CheckOut.php" method ="post">
+    <h2>Review Order</h2>
     <div class="orderTable">
       <h4>Games</h4>
       <p><a href=" " class = "games">Grand Theft Auto 5</a>
@@ -26,5 +27,6 @@
   </div>
 </div>
 <input type="submit" value="Continue to Checkout" class="button">
+</form>
 </body>
 </html>
