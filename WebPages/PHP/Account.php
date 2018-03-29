@@ -3,8 +3,11 @@
 <head>
   <title>Account</title>
   <link rel="stylesheet" href="../CSS/Account.css">
+  <meta charset='utf-8'>
 </head>
 <body>
+
+  <!-- Account Page -->
   <div id='Header'>
   <label for='username'>Username</label><br>
   <label>Account Info</lable><br><br>
@@ -32,7 +35,7 @@
     </tr>
   </table><br>
   <input id='edit-button' type='button' value="Edit" onclick="EnableText()">
-  <input id='save-button' type='button' value="Save Changes" onclick="DisableText()"><br><br>
+  <a href='./Home.php'><input id='save-button' type='button' value="Save Changes" onclick="DisableText()"></a><br><br>
   <table id='pHistory'>
     <tr>
       <th>Purchase History</th>
@@ -55,6 +58,7 @@
       document.getElementById('lname').disabled = true;
       document.getElementById('username').disabled = true;
       document.getElementById('email').disabled = true;
+      alert("Changes Saved");
     }
   </script>
 </body>
