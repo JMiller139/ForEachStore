@@ -1,0 +1,19 @@
+.test {
+    margin: 0% 30%;
+}
+.row {
+    display: inline-block;
+    background-color: black;
+}
+.vbar-icon {
+    height: 30px;
+    width: 12px;
+    padding: 0px 3px;
+}
+.page-icon {
+    padding: 0px 5px;
+}
+.banner-textbox {
+    display: inline-block;
+    position: relative;
+}
