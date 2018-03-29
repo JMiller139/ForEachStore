@@ -22,10 +22,10 @@
     <div class = 'test'>
     <div class='row'>
         <div class="col-lg-5">
-            <img class='logo-icon' src='../IMGS/Logo.png' alt='Logo'>
+            <a href='./Home.php'><img class='logo-icon' src='../IMGS/Logo.png' alt='Logo'></a>
             <img class='vbar-icon' src='../IMGS/VerticalBar.png' alt='vertical bar'>
-            <img class='page-icon' src='../IMGS/HomeIcon.png' alt='Logo'>
-            <img class='page-icon' src='../IMGS/StoreIcon.png' alt='Logo'>
+            <a href='./Home.php'><img class='page-icon' src='../IMGS/HomeIcon.png' alt='Logo'></a>
+            <a href='./Store.php'><img class='page-icon' src='../IMGS/StoreIcon.png' alt='Logo'></a>
             <img class='vbar-icon' src='../IMGS/VerticalBar.png' alt='Logo'>
         </div>
         <div class="col-lg-2">
@@ -35,7 +35,7 @@
             <input class='banner-textbox' type='text' placeholder='username'>
             <input class='banner-textbox' type='password' placeholder='password'>
             <button class='banner-btn' type='button'>Login</button>
-            <a class='signup' href='https://www.google.com/'>sign-up</a>
+            <a class='signup' href='AccountCreation.php'>sign-up</a>
         </div>
     </div>
     </div>
