@@ -1,20 +1,25 @@
-.field-title {
-    margin: 0% 0% 0% 25%;
-    font-size: 20px;
-    font-weight: bold;
+/* #personal-info-section {
+  background-color: lightgreen;
+
 }
-.form-tbox {
-    margin: 0% 0% 0% 25%;
-    width: 50%;
-    border-color: lightgray;
-    border-top-width: 0px;
-    border-left-width: 0px;
-    border-right-width: 0px;
-    font-size: 20px;
+#account-info-section {
+  background-color: lightblue;
+  
+} */
+
+#create-section {
+  text-align: center;
+  /* background-color: rgb(218, 207, 247); */
 }
-.submit {
-    margin: 0% 0% 0% 33%;
-    width: 30%;
-    height: 50%;
-    font-size: 15px;
+
+.field-label {
+  font-weight: bold;
+  margin-top: 20px;
 }
+
+
+
+/* #body-section {
+  background-color: lightsalmon;
+} */
+
