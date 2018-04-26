@@ -24,3 +24,22 @@ div.scrollmenu a {
 div.scrollmenu a:hover {
     background-color: green;
 }
+.row{
+    width: 100%;
+}
+.gInfo{
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+.modal-header{
+    background-color: forestgreen;
+}
+.modal-body{
+    background-color: snow;
+}
+.modal-footer{
+    background-color: forestgreen;
+}
+#gImage{
+    padding-top: 23px;
+}
