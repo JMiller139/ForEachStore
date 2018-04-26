@@ -12,32 +12,49 @@
     <title>Banner Before Login</title>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' href='../CSS/Theme.css'>
     <link rel='stylesheet' type='text/css' href='../CSS/BannerBeforeLogin.css'>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
-    <!-- <link rel='stylesheet' type='text/css' href='BannerBeforeLogin-CSS.css'> -->
 </head>
 <body>
-    <div class = 'test'>
+  <div class='container' id='out-banner-container'>
     <div class='row'>
-        <div class='col-lg-5'>
-            <a href='./Home.php'><img class='logo-icon' src='../IMGS/Logo.png' alt='Logo'></a>
-            <img class='vbar-icon' src='../IMGS/VerticalBar.png' alt='vertical bar'>
-            <a href='./Home.php'><img class='page-icon' src='../IMGS/HomeIcon.png' alt='Logo'></a>
-            <a href='./Store.php'><img class='page-icon' src='../IMGS/StoreIcon.png' alt='Logo'></a>
-            <img class='vbar-icon' src='../IMGS/VerticalBar.png' alt='Logo'>
-        </div>
-        <div class='col-lg-2'>
-            The Four Eaches!
-        </div>  
-        <div class='col-lg-5'>
-            <input class='banner-textbox' type='text' placeholder='username'>
-            <input class='banner-textbox' type='password' placeholder='password'>
-            <button class='banner-btn' type='button'>Login</button>
-            <a class='signup' href='AccountCreation.php'>sign-up</a>
-        </div>
-    </div>
-    </div>
+      <div class='banner-section' id='logo-banner-section'>
+        <img src='../IMGS/Logo.png' alt='Logo' class='foreach-logo' id='banner-logo'>
+      </div>
+      
+      <div class='banner-section' id='home-banner-section'>
+        <a href='Home.php' class='banner-nav-link' id='home-banner-nav-link'>Home</a>
+      </div>
+
+      <div class='banner-section' id='store-banner-section'>
+        <a href='Home.php' class='banner-nav-link' id='store-banner-nav-link'>Store</a>
+      </div>
+    
+      <div class='banner-section' id='username-banner-section'>
+        <input type='text' class='banner-nav-link' id='home-banner-nav-link'>
+      </div>
+
+      <!-- <div class='banner-section' id='password-banner-section'>
+        <a href='Home.php' class='banner-nav-link' id='home-banner-nav-link'>Home</a>
+      </div>
+
+      <div class='banner-section' id='login-banner-section'>
+        <a href='Home.php' class='banner-nav-link' id='home-banner-nav-link'>Home</a>
+      </div>
+
+      <div class='banner-section' id='signup-banner-section'>
+        <a href='Home.php' class='banner-nav-link' id='home-banner-nav-link'>Home</a>
+      </div> -->
+
+    </div> <!-- End of .row -->
+  </div> <!-- End of #out-banner-cont -->
+
+
+
+
+
 </body>
 </html>

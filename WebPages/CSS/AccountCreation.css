@@ -6,6 +6,24 @@
   background-color: lightblue;
   
 } */
+#error-section-header {
+  color: darkred;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  text-decoration: underline;
+  
+}
+
+#error-section {
+  text-align: left;
+  color: red;
+  margin-left: 19px;
+}
+#leap-year-label {
+  margin-left: 40px;
+  color: lightseagreen;
+}
 
 #create-section {
   text-align: center;
@@ -17,7 +35,17 @@
   margin-top: 20px;
 }
 
-
+.error-sub-label{
+  /* background: lightblue; */
+  display: inline-block;
+  width: 78px;
+  font-weight: bold;
+  margin-right: 50px;
+  color: red;
+  text-decoration: underline;
+  text-align: left;
+  
+}
 
 /* #body-section {
   background-color: lightsalmon;

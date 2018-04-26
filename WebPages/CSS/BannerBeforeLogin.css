@@ -1,19 +1,12 @@
-.test {
-    margin: 0% 30%;
-}
 .row {
-    display: inline-block;
-    background-color: black;
+  width: 100%;
+  background-color: lightblue;
 }
-.vbar-icon {
-    height: 30px;
-    width: 12px;
-    padding: 0px 3px;
+
+.banner-section {
+  display: inline-block;
 }
-.page-icon {
-    padding: 0px 5px;
-}
-.banner-textbox {
-    display: inline-block;
-    position: relative;
+
+.banner-nav-link {
+  display: inline-block;
 }
