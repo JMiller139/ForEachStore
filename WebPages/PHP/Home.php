@@ -4,7 +4,7 @@
   <title>The ForEach Store</title>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <link rel='stylesheet' type='text/css' href='../CSS/BannerBeforeLogin.css'>
+  <!-- <link rel='stylesheet' type='text/css' href='../CSS/BannerBeforeLogin.css'> -->
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
@@ -12,7 +12,7 @@
 </head>
 <body>
 <!-- Banner -->
-<div class = 'test'>
+<!-- <div class = 'test'>
     <div class='row'>
         <div class='col-lg-5'>
             <a href='./Home.php'><img class='logo-icon' src='../IMGS/Logo.png' alt='Logo'></a>
@@ -31,7 +31,7 @@
             <a class='signup' href='AccountCreation.php'>sign-up</a>
         </div>
     </div>
-    </div>
+    </div> -->
 
   <!-- Store Page -->
   <div class='welcomelable'>
@@ -43,7 +43,7 @@
     <img src="https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTc1FhCVDaoswL6bmTkmdwXXVGD6yxKE8umhRvOrmVN0xbkzXrlP.4vwk9ff_1PFWsPIkRF021Is.9NoMYqy230P7wL6hYZStpGgfe.yhZLY8Y71cJgI6s._21pXd9N_mrL4lryj8rWOkO5tlBR2fUvtThsMXmdMQrp5WHy0AvaCaE-&w=800&h=800&format=jpg" alt="Fortnite" height="125px" width="175px">
     <img src="https://images-na.ssl-images-amazon.com/images/I/81LXUOTmcGL.jpg" alt="Rocket League" height="125px" width="175px">
     <img src="https://cdn.gamer-network.net/2017/articles/2017-10-23-15-36/GTA_5_Online_LEAK_Duke_O_Death_DLC_update_coming_soon_605675.jpg/EG11/resize/300x-1/quality/75/format/jpg" alt="GTA5" height="125" width="175">
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Fallout_4_cover_art.jpg/220px-Fallout_4_cover_art.jpg" alt="Fallout4" height="125" width="175">
+    <input type="image" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Fallout_4_cover_art.jpg/220px-Fallout_4_cover_art.jpg" alt="Fallout4" height="125" width="175" data-toggle="modal" data-target="#gameInfoModal"/>
     <img src="https://vignette.wikia.nocookie.net/lotr/images/2/2b/Middle-earth_Shadow_of_War.jpg/revision/latest?cb=20170302153716" alt="Shadow of War" height="125" width="175">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTaXVL-hk0eEDHXvfBJv2uqJ6msPE0irZqtA9i5OnNTQ-IclG" alt="Forza Horizon 3" height="125" width="175">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdVD6yBci8ko-txo0sFioPFeV9kie3LQPZo7frQO5MMX2I8vyI" alt="Borderlands 2" height="125" width="175">
@@ -76,5 +76,54 @@
     <img src="https://res.cloudinary.com/lmn/image/upload/c_limit,h_360,w_640/e_sharpen:100/f_auto,fl_lossy,q_auto/v1/gameskinnyc/g/a/m/gaming-20170224-paladins-91db3.jpg" alt="paladins" height="125px" width="175px">
     <img src="https://upload.wikimedia.org/wikipedia/en/thumb/b/bd/Warframe_Cover_Art.png/220px-Warframe_Cover_Art.png" alt="warframe" height="125px" width="175px">
   </div>
+
+  <!-- Modal for games-->
+  <div class='modal fade' id='gameInfoModal' tabindex='-1' role='dialog'>
+    <div class='modal-dialog modal-lg' role='document'>
+      <div class='modal-content'>
+        <div class='modal-header'>
+          <button type='button' class='close' data-dismiss='modal'>&times;</button>
+          <h2 class='modal-title' align='center'>Fallout 4</h2>
+        </div>
+        <div class='modal-body'>
+        <div class='row'>
+          <div class='col-lg-6 col-md-6' id='game-pic'>
+            <div class='col-lg-12' id='game-image'>
+            <p id='gImage'>
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Fallout_4_cover_art.jpg/220px-Fallout_4_cover_art.jpg" alt="Fallout4" height="400px" width="325px">
+            </p>
+            </div>
+          </div><!--End of .game-pic-->
+          <div class='col-lg-6 col-md-6' id='game-info'>
+            <div class='col-lg-12' id='genre-contanier'><!--genre-->
+              <p class='gInfo'>Genre: </p>
+            </div>
+            <div class='col-lg-12' id='platforms-contanier'><!--platforms-->
+              <p class='gInfo'>Platfroms: </p>
+            </div>
+            <div class='col-lg-12' id='publisher-contanier'><!--publisher-->
+              <p class='gInfo'>Publishers: </p>
+            </div>
+            <div class='col-lg-12' id='publisher-contanier'><!--developer-->
+              <p class='gInfo'>Developer: </p>
+            </div>
+            <div class='col-lg-12' id='publisher-contanier'><!--release date-->
+              <p class='gInfo'>Release Date: </p>
+            </div>
+            <div class='col-lg-12' id='publisher-contanier'><!--rating-->
+              <p class='gInfo'>Rating: </p>
+            </div>
+            <div class='col-lg-12' id='publisher-contanier'><!--price-->
+              <p class='gInfo'>Price: </p>
+            </div>
+          </div><!--End of .game-info-->
+          </div><!--End of .row-->
+        </div><!--End of .modal-body-->
+        <div class='modal-footer'>
+          <p align='center'><button type='button' class='btn btn-primary' data-dismiss='modal'>Add Game</button></p>
+        </div><!--End of .modal-footer-->
+      </div><!--End of .modal-content-->
+    </div><!--End of .modal-dialog-->
+  </div><!--End of .modal fade-->
 </body>
 </html>
