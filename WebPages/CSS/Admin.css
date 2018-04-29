@@ -1,17 +1,23 @@
-h1#adminHeader{
-  text-align: center;
+.inlineBlockDiv{
+  display:inline-block;
 }
 
-p#adminRadio{
-  text-align: center;
+#priceText{
+  width: 75px;
 }
 
-textarea#adminText{
-  display: block;
-  margin: auto;
+#monthText{
+  width: 45px;
 }
 
-input#adminSubmit{
-  display: block;
-  margin: auto;
+#dayText{
+  width: 45px;
+}
+
+#yearText{
+  width: 60px;
+}
+
+#genreText{
+  width: 150px;
 }

@@ -9,7 +9,7 @@
   * $isSpecified
   */
   function dropdown($selectName, $arrayOptions = String, $isSpecified = True){
-    $dropdown = "<select name='$selectName'>";
+    $dropdown = "<select class='selectpicker' name='$selectName'>";
     $optionID = $option . "ID";
 
     if($isSpecified)
