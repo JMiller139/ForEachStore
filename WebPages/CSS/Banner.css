@@ -1,0 +1,150 @@
+
+#out-banner-container {
+  border-color: black; 
+  border-style: solid;
+  border-top-width: 0px;
+  border-right-width: 2px;
+  border-left-width: 2px;
+  border-bottom-width: 2px;
+}
+
+.row {
+  width: 100%;
+  /* background-color: lightblue; */
+}
+
+.banner-section {
+  display: inline-block;
+}
+
+.banner-nav-link {
+  display: inline-block;
+  font-size: 20px;
+  
+}
+
+.banner-nav-tbox {
+  width: 120px;
+}
+
+#error-section-header {
+  color: darkred;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+#logo-banner-section {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 1px;
+  margin-bottom: 2px;
+}
+
+#home-banner-section {
+  margin-right: 10px;
+}
+
+#store-banner-section {
+
+}
+
+#greetings-label {
+  font-weight: bold;
+}
+
+#home-banner-nav-link {
+  color: black;
+}
+
+#store-banner-nav-link {
+  color: black;
+}
+
+#store-banner-nav-link:hover {
+  color: white;
+  background-color: black;
+  font-size: 26px;
+  text-decoration: none;
+}
+#home-banner-nav-link:hover {
+  color: white;
+  background-color: black;
+  font-size: 26px;
+  text-decoration: none;
+}
+
+#error-section {
+  text-align: left;
+  color: red;
+  margin-left: 19px;
+}
+#leap-year-label {
+  margin-left: 40px;
+  color: lightseagreen;
+}
+
+#create-section {
+  text-align: center;
+}
+
+#signup-banner-section {
+  float: right;
+  padding-top: 8px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+#login-banner-section {
+  float: right;
+  padding-top: 8px;
+  margin-left: 5px;
+}
+
+#username-banner-section {
+  float: right;
+  padding-top: 8px;
+}
+
+#password-banner-section {
+  float: right;
+  padding-top: 8px;
+  margin-left: 5px;
+}
+
+
+.field-label {
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.error-sub-label{
+  display: inline-block;
+  width: 78px;
+  font-weight: bold;
+  margin-right: 50px;
+  color: red;
+  text-decoration: underline;
+  text-align: left;
+  
+}
+
+#signout-banner-section {
+  float: right;
+  padding-top: 8px;
+  margin-left: 5px;
+}
+
+#myaccount-banner-section {
+  float: right;
+  padding-top: 8px;
+  margin-left: 5px;
+}
+
+#mycart-banner-section {
+  float: right;
+  padding-top: 8px;
+  margin-right: 10px;
+  margin-left: 5px;
+}
