@@ -286,7 +286,7 @@
 
       <!-- After Login -->
       <div class='banner-section' id='mycart-banner-section'>
-        <a href='CheckOut.php' class='banner-nav-link' id='mycart-banner-nav-link'>My Cart</a>
+        <a href='Order.php' class='banner-nav-link' id='mycart-banner-nav-link'>My Cart</a>
       </div>
 
       <div class='banner-section' id='myaccount-banner-section'>
