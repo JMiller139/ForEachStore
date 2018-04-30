@@ -135,7 +135,6 @@
         if(pwd != cpwd)
           errors.push('Passwords do not match.');
 
-        console.log('pwd', errors);
         return errors;
       }
 
@@ -193,6 +192,23 @@
         $('#myaccount-banner-section').hide();
         $('#mycart-banner-section').hide();
       }
+      
+      function getUserData() {
+        var userData = {
+          fname: $('firstname-tbox').val() ,
+          lname: $('lastname-tbox').val() ,
+          month: $('month-drop').val(),
+          day: $('day-drop').val(),
+          year: $('year-drop').val(),
+          username: $('username-tbox').val(),
+          password: $('password-tbox').val(),
+        }
+        console.log('userData', userData);
+
+        return userData;
+      }
+
+
 
       $(document).ready(function(){
         resetModal();
@@ -206,7 +222,14 @@
         }); 
         
         $('#account-creation-form').submit(function() {
-          return valSubmission();
+          
+          if(valSubmission()){
+            var userData = getUserData();
+            console.log('passed ud', userData);
+            return true;
+          }
+          
+          return false;
         });
 
         $('#login-banner-btn').off('click').on('click', function() {
@@ -243,6 +266,7 @@
           $('#myaccount-banner-section').hide();
           $('#mycart-banner-section').hide();
         });
+
 
       });
 
@@ -302,7 +326,7 @@
   </div> <!-- End of #out-banner-cont -->
   
   <!-- Account Creation Modal -->
-  <form id='account-creation-form' action='AccountCreation-handle.php' method='post'>
+  <form id='account-creation-form' action='Home.php' method='post'>
     <div class='container'>
       <div class='modal fade' id='accountCreationModal' role='dialog'> <!-- Modal -->
         <div class='modal-dialog'> 
