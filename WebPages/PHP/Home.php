@@ -10,8 +10,10 @@
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
   <link rel="stylesheet" href="../CSS/Home.css">
   <script>
+    
     function getGameInfoP() {
-      
+      var returned = false;
+      var newGamesData;
       var ajax = new XMLHttpRequest();
       var method = "GET";
       var url = "getGameHomeP.php";
@@ -23,61 +25,80 @@
 
       ajax.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-          var data = JSON.parse(this.responseText);
-          console.log(data);
+          newGamesData = JSON.parse(this.responseText);
+          console.log('newGdata ', newGamesData);
 
           var html = [];
-          for(var a = 0; a < data.length; a++){
-            var src = data[a].Icon;
-            var title = data[a].Title;
-            var gameID = data[a].Game_ID;
-            html.push("<a class='cickable'><input type='image' src='",src,"' alt='",title,"' height='125' width='175' data-toggle='modal' data-target='#gameInfoModal' class='cickable-img'id='",gameID,"' onclick='modalInfo();'></a>");
+          for(var a = 0; a < newGamesData.length; a++){
+            var src = newGamesData[a].Icon;
+            var title = newGamesData[a].Title;
+            var gameID = newGamesData[a].Game_ID;
+            html.push("<button class='chase' id='",gameID,"'><input type='image' src='",src,"' alt='",title,"' height='125' width='175' data-toggle='modal' data-target='#gameInfoModal' class='cickable-img'></button>");
+            // onclick='modalInfo();'
           }
           $('#scroll1').append(html.join(''));
         }
-      }    
-}
-    $(document).ready(function(){
-   
+        
+        if(!returned) {
+          console.log('returned', newGamesData);
+          return newGamesData;    
+          returned = true;
+        }
+      }
+    }
+
+    function initGameIcons() {
+      // initPopularGamesIcons();
+      initNewGamesIcons();
+    }
+
+    function initNewGamesIcons() {
       
+      getGameInfoP();
+      // console.log('newGames, ', newGamesData);
+      var newGamesBtn = $('.newGames');
+      $.each(newGamesBtn, function(index, button) {
+        // console.log('button', button.id);
+        $('#' + button.id).text("test");
+
+      });
+
+
+
+    }
+
+    $(document).ready(function(){
+      initGameIcons();
+
+
+
+
+
     });
 
-    $(window).load(function() {
-    $(".clickable").click(function(){
-      alert('click');
-        console.log(this.id);
-     });
-    });
-
-  function modalInfo() {
+  
     // document.getElementById('#gameTitle').value = "GTA V";
+    // console.log("info we have", $('input[type=image][id]'));
+  // function modalInfo() {
 
-  }
+  //   var clickableImgs = $('input[type=image]'); 
+  //   var gameShownID;// = $('this').id;
+  //   console.log("gameShownId", gameShownID);
+  //   $.each(clickableImgs, function(index, value) {
+  //     // console.log('test', index + ": " + value );
+  //     console.log(value.id);
+  //     // if(value.onclick){
+  //       // console.log('this one is on click', value.id);
+  //     // }
+  //     console.log(value);
+
+  //   });
+
+  // }
 
   </script>
 </head>
-<body onload='getGameInfoP();'>
-<!-- Banner -->
-<!-- <div class = 'test'>
-    <div class='row'>
-        <div class='col-lg-5'>
-            <a href='./Home.php'><img class='logo-icon' src='../IMGS/Logo.png' alt='Logo'></a>
-            <img class='vbar-icon' src='../IMGS/VerticalBar.png' alt='vertical bar'>
-            <a href='./Home.php'><img class='page-icon' src='../IMGS/HomeIcon.png' alt='Logo'></a>
-            <a href='./Store.php'><img class='page-icon' src='../IMGS/StoreIcon.png' alt='Logo'></a>
-            <img class='vbar-icon' src='../IMGS/VerticalBar.png' alt='Logo'>
-        </div>
-        <div class='col-lg-2'>
-            The Four Eaches!
-        </div>  
-        <div class='col-lg-5'>
-            <input class='banner-textbox' type='text' placeholder='username'>
-            <input class='banner-textbox' type='password' placeholder='password'>
-            <button class='banner-btn' type='button'>Login</button>
-            <a class='signup' href='AccountCreation.php'>sign-up</a>
-        </div>
-    </div>
-    </div> -->
+<body> <!--  onload='getGameInfoP();' -->
 
   <!-- Store Page -->
   <div class='welcomelable'>
@@ -96,13 +117,24 @@
   </div><br><br>
   <label class='catagories'>New Games</label><br>
   <div class="scrollmenu">
-    <img src="https://sslh.ulximg.com/image/740x493/cover/1522167121_baf1a248c1fd96bd266e2c743127f254.jpg/91d447a8443b7bf3022a15ec049ea9cd/1522167121_4e3b05014fe38ed4df4dacf393e16ef8.jpg" alt="Far Cry 5" height="125" width="175">
+  <button class='viewable newGames' id='new-1'></button>
+  <button class='viewable newGames' id='new-2'></button>
+  <button class='viewable newGames' id='new-3'></button>
+  <button class='viewable newGames' id='new-4'></button>
+  <button class='viewable newGames' id='new-5'></button>
+  <button class='viewable newGames' id='new-6'></button>
+  <button class='viewable newGames' id='new-7'></button>
+  <button class='viewable newGames' id='new-8'></button>
+  <button class='viewable newGames' id='new-9'></button>
+  <button class='viewable newGames' id='new-10'></button>
+
+    <!-- <img src="https://sslh.ulximg.com/image/740x493/cover/1522167121_baf1a248c1fd96bd266e2c743127f254.jpg/91d447a8443b7bf3022a15ec049ea9cd/1522167121_4e3b05014fe38ed4df4dacf393e16ef8.jpg" alt="Far Cry 5" height="125" width="175">
     <img src="https://cdn3.dualshockers.com/wp-content/uploads/2018/01/MonsterHunterWorld.jpg" alt="monster hunter world" height="125px" width="175px">
     <input type="image" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Fallout_4_cover_art.jpg/220px-Fallout_4_cover_art.jpg" alt="Fallout4" height="125" width="175" data-toggle="modal" data-target="#gameInfoModal" id='1'/>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9I6a5RAX61VKsyW11Sj7ycMan-8JwnIPkRyRI6JezNSyIU7XF" alt="dragon ball fighterz" height="125px" width="175px">
     <img src="https://www.thenerdmag.com/wp-content/uploads/2017/04/CODWW2_1.png" alt="cod WW2" height="125px" width="175px">
     <img src="https://img.youtube.com/vi/cwGrDlv5wok/hqdefault.jpg" alt="hellblade senua's sacrifice" height="125px" width="175px">
-    <img src="https://images.g2a.com/newlayout/600x351/1x1x0/336d3b5a7ec8/59e73f58ae653aa7b752ff84" alt="prey" height="125px" width="175px">
+    <img src="https://images.g2a.com/newlayout/600x351/1x1x0/336d3b5a7ec8/59e73f58ae653aa7b752ff84" alt="prey" height="125px" width="175px"> -->
   </div><br><br>
   <label class='catagories'>Discounted Games</label><br>
   <div class="scrollmenu">
