@@ -20,7 +20,7 @@
 .banner-nav-link {
   display: inline-block;
   font-size: 20px;
-  
+  text-decoration: none;
 }
 
 .banner-nav-tbox {
@@ -113,7 +113,6 @@
   margin-left: 5px;
 }
 
-
 .field-label {
   font-weight: bold;
   margin-top: 20px;
@@ -127,7 +126,6 @@
   color: red;
   text-decoration: underline;
   text-align: left;
-  
 }
 
 #signout-banner-section {
@@ -147,4 +145,30 @@
   padding-top: 8px;
   margin-right: 10px;
   margin-left: 5px;
+}
+
+#myaccount-banner-nav-link {
+  color: black;
+}
+
+#mycart-banner-nav-link {
+  color: black;
+}
+
+#myaccount-banner-nav-link:hover {
+  color: white;
+  background-color: black;
+  font-size: 26px;
+  text-decoration: none;
+}
+#mycart-banner-nav-link:hover {
+  color: white;
+  background-color: black;
+  font-size: 26px;
+  text-decoration: none;
+}
+
+#greetings-label {
+  margin-bottom: -1px;
+  margin-top: -5px;
 }
