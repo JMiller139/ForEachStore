@@ -1,7 +1,7 @@
 <!DOCTYPE HTML5>
 <html>
 <head>
-  <title>The ForEach Store</title>
+  <title>The ForEach Home Page</title>
   <meta charset='utf-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
   <!-- <link rel='stylesheet' type='text/css' href='../CSS/BannerBeforeLogin.css'> -->
@@ -9,8 +9,54 @@
   <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
   <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
   <link rel="stylesheet" href="../CSS/Home.css">
+  <script>
+    function getGameInfoP() {
+      
+      var ajax = new XMLHttpRequest();
+      var method = "GET";
+      var url = "getGameHomeP.php";
+      var asynchronous = true;
+
+      ajax.open(method, url, asynchronous);
+
+      ajax.send();
+
+      ajax.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status == 200){
+          var data = JSON.parse(this.responseText);
+          console.log(data);
+
+          var html = [];
+          for(var a = 0; a < data.length; a++){
+            var src = data[a].Icon;
+            var title = data[a].Title;
+            var gameID = data[a].Game_ID;
+            html.push("<a class='cickable'><input type='image' src='",src,"' alt='",title,"' height='125' width='175' data-toggle='modal' data-target='#gameInfoModal' class='cickable-img'id='",gameID,"' onclick='modalInfo();'></a>");
+          }
+          $('#scroll1').append(html.join(''));
+        }
+      }    
+}
+    $(document).ready(function(){
+   
+      
+    });
+
+    $(window).load(function() {
+    $(".clickable").click(function(){
+      alert('click');
+        console.log(this.id);
+     });
+    });
+
+  function modalInfo() {
+    // document.getElementById('#gameTitle').value = "GTA V";
+
+  }
+
+  </script>
 </head>
-<body>
+<body onload='getGameInfoP();'>
 <!-- Banner -->
 <!-- <div class = 'test'>
     <div class='row'>
@@ -35,23 +81,24 @@
 
   <!-- Store Page -->
   <div class='welcomelable'>
-    <label>Welcome to the ForEach Store!!</label><br>
+    <label>Welcome to the ForEach Home Page!!</label><br>
   </div>
   <label class='catagories'>Popular Games</label><br>
   <!-- need to be auto generated for each scroolmenu-->
-  <div class="scrollmenu">
-    <img src="https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTc1FhCVDaoswL6bmTkmdwXXVGD6yxKE8umhRvOrmVN0xbkzXrlP.4vwk9ff_1PFWsPIkRF021Is.9NoMYqy230P7wL6hYZStpGgfe.yhZLY8Y71cJgI6s._21pXd9N_mrL4lryj8rWOkO5tlBR2fUvtThsMXmdMQrp5WHy0AvaCaE-&w=800&h=800&format=jpg" alt="Fortnite" height="125px" width="175px">
+  <div class="scrollmenu" id='scroll1'>
+    <!-- <img src="https://images-eds-ssl.xboxlive.com/image?url=8Oaj9Ryq1G1_p3lLnXlsaZgGzAie6Mnu24_PawYuDYIoH77pJ.X5Z.MqQPibUVTc1FhCVDaoswL6bmTkmdwXXVGD6yxKE8umhRvOrmVN0xbkzXrlP.4vwk9ff_1PFWsPIkRF021Is.9NoMYqy230P7wL6hYZStpGgfe.yhZLY8Y71cJgI6s._21pXd9N_mrL4lryj8rWOkO5tlBR2fUvtThsMXmdMQrp5WHy0AvaCaE-&w=800&h=800&format=jpg" alt="Fortnite" height="125px" width="175px">
     <img src="https://images-na.ssl-images-amazon.com/images/I/81LXUOTmcGL.jpg" alt="Rocket League" height="125px" width="175px">
-    <img src="https://cdn.gamer-network.net/2017/articles/2017-10-23-15-36/GTA_5_Online_LEAK_Duke_O_Death_DLC_update_coming_soon_605675.jpg/EG11/resize/300x-1/quality/75/format/jpg" alt="GTA5" height="125" width="175">
-    <input type="image" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Fallout_4_cover_art.jpg/220px-Fallout_4_cover_art.jpg" alt="Fallout4" height="125" width="175" data-toggle="modal" data-target="#gameInfoModal"/>
+    <img src="https://static-cdn.jtvnw.net/ttv-boxart/Grand%20Theft%20Auto%20V.jpg" alt="GTA5" height="125" width="175">
+    <input type="image" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Fallout_4_cover_art.jpg/220px-Fallout_4_cover_art.jpg" alt="Fallout4" height="125" width="175" data-toggle="modal" data-target="#gameInfoModal" id='1'/>
     <img src="https://vignette.wikia.nocookie.net/lotr/images/2/2b/Middle-earth_Shadow_of_War.jpg/revision/latest?cb=20170302153716" alt="Shadow of War" height="125" width="175">
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdTaXVL-hk0eEDHXvfBJv2uqJ6msPE0irZqtA9i5OnNTQ-IclG" alt="Forza Horizon 3" height="125" width="175">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdVD6yBci8ko-txo0sFioPFeV9kie3LQPZo7frQO5MMX2I8vyI" alt="Borderlands 2" height="125" width="175">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdVD6yBci8ko-txo0sFioPFeV9kie3LQPZo7frQO5MMX2I8vyI" alt="Borderlands 2" height="125" width="175"> -->
   </div><br><br>
   <label class='catagories'>New Games</label><br>
   <div class="scrollmenu">
     <img src="https://sslh.ulximg.com/image/740x493/cover/1522167121_baf1a248c1fd96bd266e2c743127f254.jpg/91d447a8443b7bf3022a15ec049ea9cd/1522167121_4e3b05014fe38ed4df4dacf393e16ef8.jpg" alt="Far Cry 5" height="125" width="175">
     <img src="https://cdn3.dualshockers.com/wp-content/uploads/2018/01/MonsterHunterWorld.jpg" alt="monster hunter world" height="125px" width="175px">
+    <input type="image" src="https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Fallout_4_cover_art.jpg/220px-Fallout_4_cover_art.jpg" alt="Fallout4" height="125" width="175" data-toggle="modal" data-target="#gameInfoModal" id='1'/>
     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9I6a5RAX61VKsyW11Sj7ycMan-8JwnIPkRyRI6JezNSyIU7XF" alt="dragon ball fighterz" height="125px" width="175px">
     <img src="https://www.thenerdmag.com/wp-content/uploads/2017/04/CODWW2_1.png" alt="cod WW2" height="125px" width="175px">
     <img src="https://img.youtube.com/vi/cwGrDlv5wok/hqdefault.jpg" alt="hellblade senua's sacrifice" height="125px" width="175px">
@@ -83,9 +130,9 @@
       <div class='modal-content'>
         <div class='modal-header'>
           <button type='button' class='close' data-dismiss='modal'>&times;</button>
-          <h2 class='modal-title' align='center'>Fallout 4</h2>
+          <h2 class='modal-title' align='center' id='gameTitle'>Game Infromation</h2>
         </div>
-        <div class='modal-body'>
+        <div class='modal-body' id='game_details'>
         <div class='row'>
           <div class='col-lg-6 col-md-6' id='game-pic'>
             <div class='col-lg-12' id='game-image'>
@@ -97,24 +144,31 @@
           <div class='col-lg-6 col-md-6' id='game-info'>
             <div class='col-lg-12' id='genre-contanier'><!--genre-->
               <p class='gInfo'>Genre: </p>
+              <p id='genre'>Test</p>
             </div>
             <div class='col-lg-12' id='platforms-contanier'><!--platforms-->
               <p class='gInfo'>Platfroms: </p>
+              <p id='platfrom'>Test</p>
             </div>
             <div class='col-lg-12' id='publisher-contanier'><!--publisher-->
               <p class='gInfo'>Publishers: </p>
+              <p id='publisher'></p>
             </div>
             <div class='col-lg-12' id='developer-contanier'><!--developer-->
               <p class='gInfo'>Developer: </p>
+              <p id='develpoer'></p>
             </div>
             <div class='col-lg-12' id='release-contanier'><!--release date-->
               <p class='gInfo'>Release Date: </p>
+              <p id='release-date'></p>
             </div>
             <div class='col-lg-12' id='rating-contanier'><!--rating-->
               <p class='gInfo'>Rating: </p>
+              <p id='rating'></p>
             </div>
             <div class='col-lg-12' id='price-contanier'><!--price-->
               <p class='gInfo'>Price: </p>
+              <p id='price'></p>
             </div>
           </div><!--End of .game-info-->
           </div><!--End of .row-->
