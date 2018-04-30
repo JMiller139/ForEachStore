@@ -131,7 +131,7 @@
         <td>
           <div class="inlineBlockDiv">$</div>
           <div class="inlineBlockDiv">
-            <input type="number" class="form-control" id="priceText" name="priceText" min="0" max="60" maxlength="4" pattern="\d+(\.\d{2})?"></input>
+            <input type="number" class="form-control" id="priceText" name="priceText" min="0.00" max="60.00" maxlength="4" pattern="\d+(\.\d{2})?"></input>
           </div>
         </td>
       </tr>
@@ -166,6 +166,7 @@
             <div class="inlineBlockDiv">
               <input type="text" class="form-control" id="genreText" name="genreText" placeholder="Genre"></input>
             </div>
+            </form>            
             <div class="inlineBlockDiv">
               <button class="btn btn-default" id="addGenreButton">Add More</button>
             </div>
@@ -181,7 +182,7 @@
   <button type="button" class="btn btn-default" id="confim" onclick="addGame();">Confirm Action</button>
 </div>
 
-</form>
+
 <br/>
 
 </body>
