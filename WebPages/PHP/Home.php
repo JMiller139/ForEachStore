@@ -104,23 +104,23 @@
             <div class='col-lg-12' id='publisher-contanier'><!--publisher-->
               <p class='gInfo'>Publishers: </p>
             </div>
-            <div class='col-lg-12' id='publisher-contanier'><!--developer-->
+            <div class='col-lg-12' id='developer-contanier'><!--developer-->
               <p class='gInfo'>Developer: </p>
             </div>
-            <div class='col-lg-12' id='publisher-contanier'><!--release date-->
+            <div class='col-lg-12' id='release-contanier'><!--release date-->
               <p class='gInfo'>Release Date: </p>
             </div>
-            <div class='col-lg-12' id='publisher-contanier'><!--rating-->
+            <div class='col-lg-12' id='rating-contanier'><!--rating-->
               <p class='gInfo'>Rating: </p>
             </div>
-            <div class='col-lg-12' id='publisher-contanier'><!--price-->
+            <div class='col-lg-12' id='price-contanier'><!--price-->
               <p class='gInfo'>Price: </p>
             </div>
           </div><!--End of .game-info-->
           </div><!--End of .row-->
         </div><!--End of .modal-body-->
         <div class='modal-footer'>
-          <p align='center'><button type='button' class='btn btn-primary' data-dismiss='modal'>Add Game</button></p>
+          <p align='center'><button type='button' class='btn btn-primary' data-dismiss='modal'>Add Game to Cart</button></p>
         </div><!--End of .modal-footer-->
       </div><!--End of .modal-content-->
     </div><!--End of .modal-dialog-->

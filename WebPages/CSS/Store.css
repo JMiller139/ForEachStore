@@ -1,4 +1,4 @@
-table#filterTable{
+#filterTable{
   margin: auto;
   margin-top: 20px;
   background-color: black;
@@ -26,3 +26,5 @@ table#filterTable{
   height: 175px;
   width: 225px;
 }
+
+/*<!-- need to create inline block css -->*/
