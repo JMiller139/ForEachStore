@@ -13,7 +13,7 @@
 
       function initDropdowns() {
         var months = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        console.log(months);
+        
         for (var i = 0; i < months.length; i++)
           $('#month-drop').append("<option value='" + months[i] + "'>" + months[i] + "</option>");
 
@@ -24,14 +24,12 @@
           $('#year-drop').append("<option value='" + year + "'>" + year + "</option>");
       }
 
-
-
       $(document).ready(function(){
 
         initDropdowns();
 
         $('#month-drop').change(function() {
-          alert('changed');
+          
           var month = $('#month-drop').val();
 
           if(month === 'January') {
@@ -40,13 +38,41 @@
               $('#day-drop').append("<option value='" + day + "'>" + day + "</option>");
           }
         });
+      });
 
+      function addGame() {
+      var title = $('#gameTitle').val();
+      var releaseDate = $('#month-drop').val() + " " +$('#day-drop').val() + " " + $('#year-drop').val();
+      var esrbRating = $('#ratingDropdown').val();
+      var price = $('#priceText').val();
+      var icon = $('#filePathText').val();
+      var developer = $('#developerText').val();
+      var publisher = $('#publisherText').val();
+      var platformPC = "";
+      var platformXbox = "";
+      var platformPlay = "";
+      if($('#pcCheckbox:checked').val() != undefined){
+         platformPC = $('#pcCheckbox').val();
+      }
+      if($('#xboxCheckbox:checked').val() != undefined){
+         platformXbox = $('#xboxCheckbox').val();
+      }
+      if($('#playstationCheckbox:checked').val() != undefined){
+         platformPlay = $('#playstationCheckbox').val();
+      }
+      var genre = $('#genreText').val();
+    
+      $.ajax({
+        type: 'post',
+        data: {gtitle:title,rdate:releaseDate,esrbrate:esrbRating,price:price,icon:icon,developer:developer,publisher:publisher,platformPC:platformPC,platformXbox:platformXbox,platformPlay:platformPlay,genre:genre},
+        url: "addGame.php",
+        dataType: "JSON"
+      });
 
-    });
-
-
-
-
+      alert("Game Added to Store");
+      document.forms['myForm'].reset();
+      window.location.reload();
+    }
     </script>
 
 </head>
@@ -58,7 +84,7 @@
   <h1 class="page-header">Admin</h1>
 </div>
 
-<form method="post">
+<form>
 <div class="container">
   <label><input type="radio" name='action' id='add' name="add" value='add' checked='checked'>Add Game</label>
   <label><input type="radio" name='action' id='delete' name="delete" value='delete'>Delete Game</label>
@@ -71,7 +97,7 @@
 
       <tr>
         <td><label>Game Title</label></td>
-        <td><input type="text" class="form-control"></input></td>
+        <td><input type="text" class="form-control" id='gameTitle'></input></td>
       </tr>
       <tr>
         <td><label>Release Date</label></td>
@@ -152,7 +178,7 @@
 
 
 <div class="container">
-  <button type="submit" class="btn btn-default" id="confim" onclick="">Confirm Action</button>
+  <button type="button" class="btn btn-default" id="confim" onclick="addGame();">Confirm Action</button>
 </div>
 
 </form>
