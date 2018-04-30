@@ -226,8 +226,11 @@
           if(valSubmission()){
             var userData = getUserData();
             console.log('passed ud', userData);
-            return true;
+            // either make them an account or dont
+            // add to database
+            // close modal
           }
+          // handle something here?
           
           return false;
         });
