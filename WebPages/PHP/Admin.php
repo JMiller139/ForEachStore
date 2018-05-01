@@ -90,7 +90,7 @@
           $.ajax({
             type: 'post',
             data: {gtitle:title,rdate:releaseDate,esrbrate:esrbRating,price:price,icon:icon,developer:developer,publisher:publisher,platformPC:platformPC,platformXbox:platformXbox,platformPlay:platformPlay,genre:genre},
-            url: "editGame.php",
+            url: "updateGame.php",
             dataType: "JSON"
           });
 

@@ -28,25 +28,24 @@ $result = mysqli_query($connect, $query);
     });
   </script>
 </head>
-<body>
+<body id='order-body'>
   <form action = "CheckOut.php" name ="myForm">
-    <h2>Review Order</h2>
-    <div class="orderTable">
-      <h4>Games</h4>
-      <p><?php listOrder();?>
-        <?php
-          while($row = mysqli_fetch_array($result)){
-            ?>
-          <button name='delete' class='delete-order' id='<?php echo $row['Game_ID']?>'>Delete</button>
-          <?php
-        }
-      ?>
-      </p>
-
+    <div id='order-page-section' align='center'>
+      <h1 align='center'>Review Order</h1>
+      <div class="orderTable" id='order-table'>
+        <h1>Games</h1>
+        <p><?php listOrder();?>
+          <?php/*
+            while($row = mysqli_fetch_array($result)){
+              ?>
+            <button name='delete' class='delete-order' id='<?php echo $row['Game_ID']?>'>Delete</button>
+            <?php
+          }*/
+        ?>
+        </p>
+      </div>
+      <input type="submit" value="Continue to Checkout" id='cont-checkout-btn' class="button">
     </div>
-  </div>
-</div>
-<input type="submit" value="Continue to Checkout" class="button">
-</form>
+  </form>
 </body>
 </html>
