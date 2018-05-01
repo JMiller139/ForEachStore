@@ -77,11 +77,6 @@
         data: {fname:firstname,lname:lastname,uname:username,email:email},
         dataType: "JSON"
       });
-      
-      // $.post('test.php', {fname:firstname,lname:lastname,uname:username,email:email}, 
-      // function(data) {
-      //   $('#result').html(data);
-      // });
     }
     function getUserInfo() {
       

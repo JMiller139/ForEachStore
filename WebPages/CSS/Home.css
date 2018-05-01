@@ -28,7 +28,10 @@ div.scrollmenu a:hover {
     width: 100%;
 }
 .gInfo{
-    margin-bottom: 40px;
+    /* margin-top: 40px; */
+    font-size: 18px;
+}
+#gInfoTop{
     font-size: 18px;
 }
 .modal-header{
