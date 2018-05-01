@@ -28,6 +28,7 @@ function listOrder(){
       $totalPrice += $row["Price"];
       $count += 1;
       echo  "<a id = 'games' href= ' ' class = 'games'>".$row["Title"]."</a>";
+      echo "<input type='button' id='".$row["Game_ID"]."' value='Delete' class='dbutton' />";
       echo "<span class='price'>$".$row["Price"]."</span>"."<br>";
       }
       echo "<hr>";

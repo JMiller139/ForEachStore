@@ -43,14 +43,8 @@ a.remove{
   font-size: 11px;
 }
 
-.button {
-  background-color: #049DFC;
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
+.dbutton {
+  padding: 0;
   border: none;
-  width: 100%;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 17px;
+  background: none;
 }
