@@ -1,32 +1,24 @@
+<?php include 'getOrder.php';?>
 <!DOCTYPE html>
-<html>
+<html lang="en-au">
 <head>
+<meta charset="utf-8" />
+<title>Your Order</title>
+  <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="../CSS/Order.css" rel="stylesheet" type="text/css"/>
-  <title>Order</title>
 </head>
 <body>
-  <form action = "CheckOut.php" method ="post">
+  <form action = "CheckOut.php" >
     <h2>Review Order</h2>
     <div class="orderTable">
       <h4>Games</h4>
-      <p><a href=" " class = "games">Grand Theft Auto 5</a>
-        <a href=" " class = "remove">Remove</a>
-        <span class="price">$59.99</span></p>
-      <p><a id = "games" href=" " class = "games">Border Lands 2</a>
-        <a id = "remove" href=" " class = "remove">Remove</a>
-        <span class="price">$39.99</span></p>
-      <p><a href=" " class = "games">Rocket League</a>
-        <a href=" " class = "remove">Remove</a>
-        <span class="price">$45.00</span></p>
-      <p><a href=" " class = "games">Eco</a>
-        <a href=" " class = "remove">Remove</a>
-        <span class="price">$50.00</span></p>
-      <hr>
-      <p>Total <span class="price" style="color:red"><b>$194.98</b></span></p>
+      <p><?php listOrder();?></p>
     </div>
   </div>
 </div>
 <input type="submit" value="Continue to Checkout" class="button">
+<input type='button' onclick='getOrder()' value='Query MySQL' />
 </form>
 </body>
 </html>
