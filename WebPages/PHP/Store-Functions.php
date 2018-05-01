@@ -1,25 +1,29 @@
 <?php
 
-  error_reporting(E_ALL);
+$title = $_POST['gtitle'];
+$releaseDate = $_POST['rdate'];
+$esrbRating = $_POST['esrbrate'];
+$price = $_POST['price'];
+$icon = $_POST['icon'];
+$developer = $_POST['developer'];
+$publisher = $_POST['publisher'];
+$platformPC = $_POST['platformPC'];
+$platformXbox = $_POST['platformXbox'];
+$platformPlay = $_POST['platformPlay'];
+$genre = $_POST['genre'];
 
-  /**
-  *Purpose is to create a drop down list. Gives the drop down the name of them
-  * $str, and creates the options from an array of strings. Will add an option
-  * Select One if the users has not specified not to in the third parameter
-  * $isSpecified
-  */
-  function dropdown($selectName, $arrayOptions = String, $isSpecified = True){
-    $dropdown = "<select class='selectpicker' name='$selectName'>";
-    $optionID = $option . "ID";
+$servername = "localhost";
+$username = "proj1";
+$password = "foreach";
+$dname = "proj1";
 
-    if($isSpecified)
-      $dropdown .= "<option value='' id=''>Select one</option>";
+$connect = mysqli_connect($servername, $username, $password, $dname);
+if(mysqli_connect_error()) { echo "Error details: ", mysqli_connect_error(), "\n"; }
 
-    foreach ($arrayOptions as $option)
-     $dropdown .= "<option value='$option' id='$optionID'>$option</option>";
-     //look back at the id to add ID to the end of $option
 
-   return "$dropdown</select>";
- }
+
+mysqli_close($connect);
+
+
 
 ?>

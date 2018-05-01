@@ -26,11 +26,11 @@
         for (var i = 0; i < months.length; i++)
           $('#month-drop').append("<option value='" + (i+1) + "'>" + months[i] + "</option>");
         for (var day = 1; day <= 31; day++)
-          $('#day-drop').append("<option value='" + day + "'>" + day + "</option>");        
+          $('#day-drop').append("<option value='" + day + "'>" + day + "</option>");
         for(var year = 2018; year >= 1960; year--)
           $('#year-drop').append("<option value='" + year + "'>" + year + "</option>");
       }
-      
+
       function calcNumDaysByMonth() {
         var month = $('#month-drop').val();
         var year = $('#year-drop').val();
@@ -48,7 +48,7 @@
         else
           $('#leap-year-label').hide();
       }
-      
+
       function makeLeapYearChanges() {
         var year = $('#year-drop').val();
         var month = $('#month-drop').val();
@@ -76,7 +76,7 @@
         var fname = $('#firstname-tbox').val().trim();
         var errors = [];
         var isPlural = (fname.length -15) === 1 ? 'character' : 'characters';
-        
+
         if(fname === "")
           errors.push('Required');
         else if(fname.length > 15)
@@ -87,12 +87,12 @@
 
         return errors;
       }
-      
+
       function valLastName() {
         var lname = $('#lastname-tbox').val().trim();
         var errors = [];
         var isPlural = (lname.length -15) === 1 ? 'character' : 'characters';
-        
+
         if(lname === "")
           errors.push('Required');
         else if(lname.length > 15)
@@ -103,12 +103,12 @@
 
         return errors;
       }
-      
+
       function valUserName() {
         var user = $('#username-tbox').val().trim();
         var errors = [];
         var isPlural = (user.length -10) === 1 ? 'character' : 'characters';
-        
+
         if(user === "")
           errors.push('Required');
         else if(user.length > 10)
@@ -119,13 +119,13 @@
 
         return errors;
       }
-      
+
       function valPwd() {
         var pwd = $('#password-tbox').val().trim();
         var cpwd = $('#confirm-password-tbox').val().trim();
         var errors = [];
         var isPlural = (6-pwd.length) === 1 ? 'character' : 'characters';
-        
+
         if(pwd === "" || cpwd === "")
           errors.push('Required');
         else if(pwd.length < 6)
@@ -137,7 +137,7 @@
         return errors;
       }
 
-       
+
       // in here set the border colors green is valid red is not valid
       function valSubmission() {
         $('#error-section-info').empty();
@@ -147,7 +147,7 @@
         var pwdErrors = valPwd();
         var totalErrors = fnameErrors.length + lnameErrors.length + unameErrors.length + pwdErrors.length;
         console.log('total errors ', totalErrors);
-        
+
         if(totalErrors > 0)
           $('#error-section').show();
         else
@@ -164,29 +164,29 @@
           $('#firstname-tbox').removeClass('input-error');
           $('#firstname-tbox').addClass('input-success');
         }
-          
+
         if(lnameErrors.length > 0) {
           $('#lastname-tbox').addClass('input-error');
-          $('#lastname-tbox').removeClass('input-success');                
+          $('#lastname-tbox').removeClass('input-success');
           $('#error-section-info').append("<div class='error-sub-section' id='lname-error-section'></div>");
           $('#lname-error-section').append("<span class='error-sub-label' id='lname-error-sub-label'>Last Name:</span>");
           $('#lname-error-section').append("<span class='error-sub-info'>" + lnameErrors[0] + "</span>");
         }
         else {
           $('#lastname-tbox').removeClass('input-error');
-          $('#lastname-tbox').addClass('input-success');      
+          $('#lastname-tbox').addClass('input-success');
         }
 
         if(unameErrors.length > 0) {
           $('#username-tbox').addClass('input-error');
-          $('#username-tbox').removeClass('input-success');     
+          $('#username-tbox').removeClass('input-success');
           $('#error-section-info').append("<div class='error-sub-section' id='unameErrors-error-section'></div>");
           $('#unameErrors-error-section').append("<span class='error-sub-label' id='unameErrors-error-sub-label'>Username:</span>");
             $('#unameErrors-error-section').append("<span class='error-sub-info'>" + unameErrors[0] + "</span>");
         }
         else {
           $('#username-tbox').removeClass('input-error');
-          $('#username-tbox').addClass('input-success');               
+          $('#username-tbox').addClass('input-success');
         }
 
         if(pwdErrors.length > 0) {
@@ -194,7 +194,7 @@
           $('#confirm-password-tbox').addClass('input-error');
           $('#password-tbox').removeClass('input-success');
           $('#confirm-password-tbox').removeClass('input-success');
-          
+
           $('#error-section-info').append("<div class='error-sub-section' id='pwdErrors-error-section'></div>");
           $('#pwdErrors-error-section').append("<span class='error-sub-label' id='pwdErrors-error-sub-label'>Password:</span>");
           $('#pwdErrors-error-section').append("<span class='error-sub-info'>" + pwdErrors[0] + "</span>");
@@ -205,12 +205,12 @@
           $('#password-tbox').addClass('input-success');
           $('#confirm-password-tbox').addClass('input-success');
         }
-        
+
         return (totalErrors === 0) ? true: false;
       }
 
       function resetModal() {
-        // clear all text boxes, reset all fields. 
+        // clear all text boxes, reset all fields.
         // clear errorsS
         initDropdown();
         $('#error-section-info').empty();
@@ -224,7 +224,7 @@
         $('#mycart-banner-section').hide();
         $('.field').val("").removeClass('input-error').removeClass('input-success');
       }
-      
+
       function getUserData() {
         var userData = {
           fname: $('#firstname-tbox').val() ,
@@ -237,36 +237,36 @@
         }
         return userData;
       }
-      
+
       function signIn(userData) {
         $('#greetings-label').text('Hi '+userData.username+'!');
         $('.logged-in').show();
         $('.logged-out').hide();
       }
-      
+
       function signIn() {
         $('#greetings-label').text('Hi '+$('#username-banner-tbox').val().trim()+'!');
         $('.logged-in').show();
         $('.logged-out').hide();
       }
-      
+
       function signOut() {
         $('#username-banner-tbox').val("");
         $('#password-banner-tbox').val("");
         $('.logged-in').hide();
         $('.logged-out').show();
       }
-    
+
     $(document).ready(function(){
       resetModal();
 
       $('#month-drop').change(function() {
         calcNumDaysByMonth();
-      });        
+      });
 
       $('#year-drop').change(function() {
         makeLeapYearChanges();
-      }); 
+      });
 
       $('#account-creation-form').submit(function() {
         if(valSubmission()){
@@ -317,7 +317,7 @@
 
   </script>
 </head>
-<body class='fe-bg-color'> 
+<body class='fe-bg-color'>
  <!-- Banner -->
  <div class='container' id='out-banner-container'>
     <div class='row' id='banner-row'>
@@ -339,11 +339,11 @@
 
       <div class='logged-out banner-section' id='signup-banner-section'>
         <button type='button' class='logged-out-banner-section banner-nav-btn' data-toggle='modal' id = 'signup-banner-btn' data-target='#accountCreationModal'>Sign Up</button>
-      </div> 
+      </div>
 
       <div class='logged-out banner-section' id='login-banner-section'>
         <button class='logged-out-banner-section banner-nav-btn' id='login-banner-btn'>Login</button>
-      </div> 
+      </div>
 
       <div class='logged-out banner-section' id='password-banner-section'>
         <input type='text' class='logged-out-banner-section banner-nav-tbox' id='password-banner-tbox' placeholder='Enter Password'>
@@ -361,7 +361,7 @@
       <div class='logged-in banner-section' id='myaccount-banner-section'>
         <a href='Account.php' class='banner-nav-link' id='myaccount-banner-nav-link'>My Account</a>
       </div>
-      
+
       <div class='logged-in banner-section' id='signout-banner-section'>
         <p id='greetings-label'></p>
         <button class='banner-nav-btn' id='signout-banner-btn'>Sign Out</button>
@@ -369,12 +369,12 @@
 
     </div> <!-- End of .row -->
   </div> <!-- End of #out-banner-cont -->
-  
+
   <!-- Account Creation Modal -->
   <form id='account-creation-form' action='Home.php' method='post'>
     <div class='container'>
       <div class='modal fade' id='accountCreationModal' role='dialog'> <!-- Modal -->
-        <div class='modal-dialog'> 
+        <div class='modal-dialog'>
           <div class='modal-content'>
             <div class='modal-header' id='ac-modal-header'>
               <button type='button' class='close' data-dismiss='modal' id='close-signup-modal'>&times;</button>
@@ -440,14 +440,14 @@
     <?php
       while($row = mysqli_fetch_array($result)){
        ?>
-      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='125' width='175'></button>       
+      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='125' width='175'></button>
     <?php
       }
     ?>
   </div><br><br>
   <p class='cat-label fe-blue fe-bold'>New Games</p><br>
   <div class="scrollmenu">
-      
+
   </div><br><br>
   <p class='cat-label fe-blue fe-bold'>Discounted Games</p><br>
   <div class="scrollmenu">
@@ -456,7 +456,7 @@
       $result = mysqli_query($connect, $query);
       while($row = mysqli_fetch_array($result)){
        ?>
-      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='125' width='175'></button>       
+      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='125' width='175'></button>
     <?php
       }
     ?>
@@ -468,7 +468,7 @@
       $result = mysqli_query($connect, $query);
       while($row = mysqli_fetch_array($result)){
        ?>
-      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='125' width='175'></button>       
+      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='125' width='175'></button>
     <?php
       }
     ?>
@@ -483,7 +483,7 @@
         </div> -->
         <div class='modal-body' id='game_detail'>
 
-        </div>  
+        </div>
         <div class='modal-footer'>
           <p align='center'><button type='button' id='home-add-to-cart'class='btn btn-default' data-dismiss='modal'>Add to Cart</button></p>
         </div>
