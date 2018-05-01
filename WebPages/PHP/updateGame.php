@@ -34,6 +34,9 @@ mysqli_query($connect, $query);
 $query = "UPDATE Game_Publishers SET Publisher='$publisher' WHERE Game_ID='$id'";
 mysqli_query($connect, $query);
 
+$query = "SELECT Platform FROM Game_Platforms WHERE Game_ID='$id'";
+
+
 $query = "UPDATE Game_Platforms SET Platform='$platformPC' WHERE Game_ID='$id'";
 mysqli_query($connect, $query);
 
