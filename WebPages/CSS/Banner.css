@@ -147,3 +147,13 @@
 .logged-out-banner-section{
   margin-top: 5px;
 }
+
+.input-error {
+  border-color: red;
+  border-width: 1px;
+}
+
+.input-success {
+  border-color: lightgreen;
+  border-width: 2px;
+}

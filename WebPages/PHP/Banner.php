@@ -154,24 +154,56 @@
           $('#error-section').hide();
 
         if(fnameErrors.length > 0) {
+          $('#firstname-tbox').addClass('input-error');
+          $('#firstname-tbox').removeClass('input-success');
           $('#error-section-info').append("<div class='error-sub-section' id='fname-error-section'></div>");
           $('#fname-error-section').append("<span class='error-sub-label' id='fname-error-sub-label'>First Name:</span>");
           $('#fname-error-section').append("<span class='error-sub-info'>" + fnameErrors[0] + "</span>");
         }
+        else {
+          $('#firstname-tbox').removeClass('input-error');
+          $('#firstname-tbox').addClass('input-success');
+        }
+          
         if(lnameErrors.length > 0) {
+          $('#lastname-tbox').addClass('input-error');
+          $('#lastname-tbox').removeClass('input-success');                
           $('#error-section-info').append("<div class='error-sub-section' id='lname-error-section'></div>");
           $('#lname-error-section').append("<span class='error-sub-label' id='lname-error-sub-label'>Last Name:</span>");
           $('#lname-error-section').append("<span class='error-sub-info'>" + lnameErrors[0] + "</span>");
         }
+        else {
+          $('#lastname-tbox').removeClass('input-error');
+          $('#lastname-tbox').addClass('input-success');      
+        }
+
         if(unameErrors.length > 0) {
+          $('#username-tbox').addClass('input-error');
+          $('#username-tbox').removeClass('input-success');     
           $('#error-section-info').append("<div class='error-sub-section' id='unameErrors-error-section'></div>");
           $('#unameErrors-error-section').append("<span class='error-sub-label' id='unameErrors-error-sub-label'>Username:</span>");
             $('#unameErrors-error-section').append("<span class='error-sub-info'>" + unameErrors[0] + "</span>");
         }
+        else {
+          $('#username-tbox').removeClass('input-error');
+          $('#username-tbox').addClass('input-success');               
+        }
+
         if(pwdErrors.length > 0) {
+          $('#password-tbox').addClass('input-error');
+          $('#confirm-password-tbox').addClass('input-error');
+          $('#password-tbox').removeClass('input-success');
+          $('#confirm-password-tbox').removeClass('input-success');
+          
           $('#error-section-info').append("<div class='error-sub-section' id='pwdErrors-error-section'></div>");
           $('#pwdErrors-error-section').append("<span class='error-sub-label' id='pwdErrors-error-sub-label'>Password:</span>");
           $('#pwdErrors-error-section').append("<span class='error-sub-info'>" + pwdErrors[0] + "</span>");
+        }
+        else {
+          $('#password-tbox').removeClass('input-error');
+          $('#confirm-password-tbox').removeClass('input-error');
+          $('#password-tbox').addClass('input-success');
+          $('#confirm-password-tbox').addClass('input-success');
         }
         
         return (totalErrors === 0) ? true: false;
@@ -190,7 +222,7 @@
         $('#signout-banner-section').hide();
         $('#myaccount-banner-section').hide();
         $('#mycart-banner-section').hide();
-        $('.field').val("");
+        $('.field').val("").removeClass('input-error').removeClass('input-success');
       }
       
       function getUserData() {
