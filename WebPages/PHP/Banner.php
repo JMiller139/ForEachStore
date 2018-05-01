@@ -4,7 +4,6 @@
  * Logo:  48x48
  * Icons: 32x32
  */
-
 ?>
 <!DOCTYPE html>
 <html lang='en'>
@@ -147,7 +146,7 @@
         var unameErrors = valUserName();
         var pwdErrors = valPwd();
         var totalErrors = fnameErrors.length + lnameErrors.length + unameErrors.length + pwdErrors.length;
-        console.log(totalErrors);
+        console.log('total errors ', totalErrors);
         
         if(totalErrors > 0)
           $('#error-section').show();
@@ -195,19 +194,46 @@
       
       function getUserData() {
         var userData = {
-          fname: $('firstname-tbox').val() ,
-          lname: $('lastname-tbox').val() ,
-          month: $('month-drop').val(),
-          day: $('day-drop').val(),
-          year: $('year-drop').val(),
-          username: $('username-tbox').val(),
-          password: $('password-tbox').val(),
+          fname: $('#firstname-tbox').val() ,
+          lname: $('#lastname-tbox').val() ,
+          month: $('#month-drop').val(),
+          day: $('#day-drop').val(),
+          year: $('#year-drop').val(),
+          username: $('#username-tbox').val(),
+          password: $('#password-tbox').val(),
         }
-        console.log('userData', userData);
-
         return userData;
       }
+      
+      // function test() {
+      //   var userData = getUserData();
+        
+      //   var year = userData.year + "";
+      //   var month = (userData.month > 0 && userData.month < 10) ? ("0" + userData.month) : (userData.month + "");
+      //   var day = (userData.day > 0 && userData.day < 10) ? ("0" + userData.day) : (userData.day + "");
 
+      //   alert(year + '-' + month + '-' + day);
+      // }
+
+      function signIn(userData) {
+        $('#greetings-label').text('Hi '+userData.username+'!');
+        $('.logged-in').show();
+        $('.logged-out').hide();
+
+      }
+      
+      function signIn() {
+        $('#greetings-label').text('Hi '+$('#username-banner-tbox').val().trim()+'!');
+        $('.logged-in').show();
+        $('.logged-out').hide();
+      }
+      
+      function signOut() {
+        $('#username-banner-tbox').val("");
+        $('#password-banner-tbox').val("");
+        $('.logged-in').hide();
+        $('.logged-out').show();
+      }
 
 
       $(document).ready(function(){
@@ -225,10 +251,18 @@
           
           if(valSubmission()){
             var userData = getUserData();
-            console.log('passed ud', userData);
-            // either make them an account or dont
-            // add to database
+            console.log('userData', userData);
+            $.ajax({
+              type: "POST",
+              url: "AccountCreation-handle.php",
+              data: {fname:userData.fname, lname:userData.lname, month:userData.month, day:userData.day, year:userData.year, username:userData.username, password:userData.password},
+              dataType: "JSON"
+            });
             // close modal
+            // test();
+            $('#close-signup-modal').trigger('click');
+            signIn(userData);
+
           }
           // handle something here?
           
@@ -238,13 +272,14 @@
         $('#login-banner-btn').off('click').on('click', function() {
           
           // if they can log in .. {
-          $('#username-banner-section').hide();
-          $('#password-banner-section').hide();
-          $('#login-banner-section').hide();
-          $('#signup-banner-section').hide();
-          $('#signout-banner-section').show();
-          $('#myaccount-banner-section').show();
-          $('#mycart-banner-section').show();
+          // $('#username-banner-section').hide();
+          // $('#password-banner-section').hide();
+          // $('#login-banner-section').hide();
+          // $('#signup-banner-section').hide();
+          // $('#signout-banner-section').show();
+          // $('#myaccount-banner-section').show();
+          // $('#mycart-banner-section').show();
+            signIn()
 
 
 
@@ -261,14 +296,21 @@
         });
 
         $('#signout-banner-btn').off('click').on('click', function() {
-          $('#username-banner-section').show();
-          $('#password-banner-section').show();
-          $('#login-banner-section').show();
-          $('#signup-banner-section').show();
-          $('#signout-banner-section').hide();
-          $('#myaccount-banner-section').hide();
-          $('#mycart-banner-section').hide();
+          signOut();
+          // $('#username-banner-section').show();
+          // $('#password-banner-section').show();
+          // $('#login-banner-section').show();
+          // $('#signup-banner-section').show();
+          // $('#signout-banner-section').hide();
+          // $('#myaccount-banner-section').hide();
+          // $('#mycart-banner-section').hide();
         });
+        
+        $('#close-signup-modal').off('click').on('click', function(){
+          resetModal();
+        });
+
+
 
 
       });
@@ -292,36 +334,36 @@
       </div>
 
       <div class='banner-section' id='store-banner-section'>
-        <a href='Home.php' class='banner-nav-link' id='store-banner-nav-link'>Store</a>
+        <a href='Store.php' class='banner-nav-link' id='store-banner-nav-link'>Store</a>
       </div>
 
-      <div class='banner-section' id='signup-banner-section'>
+      <div class='logged-out banner-section' id='signup-banner-section'>
         <button type='button' class='banner-nav-btn' data-toggle='modal' id = 'signup-banner-btn' data-target='#accountCreationModal'>Sign Up</button>
       </div> 
 
-      <div class='banner-section' id='login-banner-section'>
+      <div class='logged-out banner-section' id='login-banner-section'>
         <button class='banner-nav-btn' id='login-banner-btn'>Login</button>
       </div> 
 
-      <div class='banner-section' id='password-banner-section'>
+      <div class='logged-out banner-section' id='password-banner-section'>
         <input type='text' class='banner-nav-tbox' id='password-banner-tbox' placeholder='Enter Password'>
       </div>
 
-      <div class='banner-section' id='username-banner-section'>
+      <div class='logged-out banner-section' id='username-banner-section'>
         <input type='text' class='banner-nav-tbox' id='username-banner-tbox' placeholder='Enter Username'>
       </div>
 
       <!-- After Login -->
-      <div class='banner-section' id='mycart-banner-section'>
+      <div class='logged-in banner-section' id='mycart-banner-section'>
         <a href='Order.php' class='banner-nav-link' id='mycart-banner-nav-link'>My Cart</a>
       </div>
 
-      <div class='banner-section' id='myaccount-banner-section'>
+      <div class='logged-in banner-section' id='myaccount-banner-section'>
         <a href='Account.php' class='banner-nav-link' id='myaccount-banner-nav-link'>My Account</a>
       </div>
       
-      <div class='banner-section' id='signout-banner-section'>
-        <p id='greetings-label'>Hi Big Cat!</p>
+      <div class='logged-in banner-section' id='signout-banner-section'>
+        <p id='greetings-label'></p>
         <button class='banner-nav-btn' id='signout-banner-btn'>Sign Out</button>
       </div>
 
@@ -335,7 +377,7 @@
         <div class='modal-dialog'> 
           <div class='modal-content'>
             <div class='modal-header'>
-              <button type='button' class='close' data-dismiss='modal'>&times;</button>
+              <button type='button' class='close' data-dismiss='modal' id='close-signup-modal'>&times;</button>
               <h2 class='modal-title' align='center'>Create Account</h2>
             </div> <!-- End of .modal-header -->
             <div class='modal-body' id='body-section'>
@@ -364,7 +406,7 @@
                 <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12' id='account-info-section'>
                   <div class='col-lg-12' id='username-container'> <!-- username -->
                     <p class='field-label' id='username-label'>Username:</p>
-                    <input type='text' class='field' id='username-tbox'  name='username' placeholder='Big Cat'>
+                    <input type='text' class='field' id='username-tbox' name='username' placeholder='Big Cat'>
                   </div>
                   <div class='col-lg-12' id='password-container'> <!-- password -->
                     <p class='field-label' id='password-label'>Password:</p>
@@ -394,3 +436,4 @@
 
 </body>
 </html>
+

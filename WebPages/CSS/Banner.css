@@ -1,4 +1,3 @@
-
 #out-banner-container {
   border-color: black; 
   border-style: solid;
@@ -131,7 +130,7 @@
 #signout-banner-section {
   float: right;
   padding-top: 8px;
-  margin-left: 5px;
+  margin-right: 3px;
 }
 
 #myaccount-banner-section {
@@ -143,8 +142,8 @@
 #mycart-banner-section {
   float: right;
   padding-top: 8px;
-  margin-right: 10px;
-  margin-left: 5px;
+  margin-right: 8px;
+  margin-left: 8px;
 }
 
 #myaccount-banner-nav-link {
