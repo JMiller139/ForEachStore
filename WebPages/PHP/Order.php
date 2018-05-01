@@ -323,7 +323,7 @@ $result = mysqli_query($connect, $query);
     <div class='row' id='banner-row'>
 
       <div class='banner-section' id='logo-banner-section'>
-        <a href='Home.php'>
+        <a href='Admin.php'>
           <img src='../IMGS/Logo.png' alt='Logo' class='foreach-logo'  id='banner-logo'>
         </a>
       </div>
