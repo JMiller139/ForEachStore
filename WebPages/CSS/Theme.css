@@ -1,3 +1,15 @@
-/* .foreach-logo {
+.fe-blue{
+  color: #51cbf1;
+}
 
-} */
+.fe-red {
+  color: #c00303c2;
+}
+
+.fe-grey {
+  color: #525252;
+}
+
+.fe-bold {
+  font-weight: bold;
+}
