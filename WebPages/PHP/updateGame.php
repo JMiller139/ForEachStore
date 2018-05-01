@@ -36,15 +36,23 @@ mysqli_query($connect, $query);
 
 $query = "SELECT Platform FROM Game_Platforms WHERE Game_ID='$id'";
 
-
-$query = "UPDATE Game_Platforms SET Platform='$platformPC' WHERE Game_ID='$id'";
+$query = "DELETE FROM Game_Platforms WHERE Game_ID = '$id'";
 mysqli_query($connect, $query);
 
-$query = "UPDATE Game_Platforms SET Platform='$platformXbox' WHERE Game_ID='$id'";
-mysqli_query($connect, $query);
+if($platformPC != ""){
+    $query = "INSERT INTO Game_Platforms (Game_Id,Platform) VALUES ('$id','$platformPC')";
+    mysqli_query($connect, $query);
+}
 
-$query = "UPDATE Game_Platforms SET Platform='$platformPlay' WHERE Game_ID='$id'";
-mysqli_query($connect, $query);
+if($platformXbox != ""){
+    $query = "INSERT INTO Game_Platforms (Game_Id,Platform) VALUES ('$id','$platformXbox')";
+    mysqli_query($connect, $query);
+}
+
+if($platformPlay != ""){
+    $query = "INSERT INTO Game_Platforms (Game_Id,Platform) VALUES ('$id','$platformPlay')";
+    mysqli_query($connect, $query);
+}
 
 $query = "UPDATE Game_Genres SET Genre='$genre' WHERE Game_ID='$id'";
 mysqli_query($connect, $query);
