@@ -3,53 +3,49 @@
 <head>
   <title>Account</title>
   <link rel="stylesheet" href="../CSS/Account.css">
+  <link rel="stylesheet" href="../CSS/Theme.css">
   <meta charset='utf-8'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
-<body onload="getUserInfo();DisableText();">
+<body class='fe-bg-color'>
 
   <!-- Account Page -->
   <div id='Header'>
-  <label for='username'>Username</label><br>
-  <label>Account Info</lable><br><br>
+  <!-- <h1>Username</h1> -->
+  <h1 class='fe-blue'>Account Info</h1>
   </div>
   <form>
   <table>
     <tr>
-      <td><label>First Name: </label></td>
-      <td><input type="text" id="fname" disabled></td>
+      <td><label class='field-label'>First Name: </label></td>
+      <td><input type="text" id="fname" class='field'></td>
     </tr>
     <tr>
-      <td><label>Last Name: </label></td>
-      <td><input type="text" id="lname" disabled></td>
+      <td><label class='field-label'>Last Name: </label></td>
+      <td><input type="text" id="lname" class='field'></td>
     </tr>
     <tr>
-      <td><label>Username: </label></td>
-      <td><input type="text" id="username" disabled></td>
+      <td><label class='field-label'>Username: </label></td>
+      <td><input type="text" id="username" class='field'></td>
     </tr>
     <tr>
-      <td><label>Email: </label></td>
-      <td><input type="text" id="email" disabled></td>
-    </tr>
-    <tr>
-      <td><label>Age: </label></td>
-      <td><label for='age'>#</lable></td>
+      <td><label class='field-label'>Email: </label></td>
+      <td><input type="text" id="email" class='field'></td>
     </tr>
   </table><br>
-  <input id='edit-button' type='button' value="Edit" onclick="EnableText()">
+  <input id='edit-button' type='button' value="Edit">
   <!-- <a href='./Home.php'><input id='save-button' type='button' value="Save Changes" onclick="DisableText()"></a><br><br> -->
-  <input id='save-button' type='button' value="Save Changes" onclick="DisableText();saveUserNames();"><br><br>
+  <input id='save-button' type='button' value="Save Changes" ><br><br> <!--onclick="DisableText();saveUserNames();" -->
   </form>
   <div id='result'></div>
   <table id='pHistory'>
     <tr>
-      <th>Purchase History</th>
+      <th class='fe-blue' id='purchase-hist-title'>Purchase History</th>
     </tr>
     <tr>
       <td></td>
     </tr>
   </table>
-
 
   <script>
     function EnableText() {
@@ -109,6 +105,25 @@
             }
           }    
     }
+
+    $(document).ready(function(){
+      DisableText();
+    });
+
+    $('#edit-button').click(function(){
+      if( document.getElementById('fname').disabled){
+        document.getElementById('fname').disabled = false;
+        document.getElementById('lname').disabled = false;
+        document.getElementById('username').disabled = false;
+        document.getElementById('email').disabled = false;
+      }
+      else {
+        document.getElementById('fname').disabled = true;
+        document.getElementById('lname').disabled = true;
+        document.getElementById('username').disabled = true;
+        document.getElementById('email').disabled = true;
+      }
+    });
   </script>
 </body>
 </html>

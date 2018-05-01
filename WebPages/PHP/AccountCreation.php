@@ -1,36 +1,31 @@
 <?php
 /**
- * Banner Before Login
- * Logo:  48x48
- * Icons: 32x32
+ * Account Creation
+ *
  */
 ?>
+
 <!DOCTYPE html>
 <html lang='en'>
 <head>
-    <title>Banner Before Login</title>
+    <title>Account Creation</title>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' href='../CSS/Theme.css'>
-    <link rel='stylesheet' type='text/css' href='../CSS/Banner.css'>
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' href='../CSS/AccountCreation.css'>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
     <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
     <script>
-      function initDropdown() {
-        $('#month-drop').empty();
-        $('#day-drop').empty();
-        $('#year-drop').empty();
-
+      function initDropdowns() {
         var months = ['January','February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
         for (var i = 0; i < months.length; i++)
           $('#month-drop').append("<option value='" + (i+1) + "'>" + months[i] + "</option>");
         for (var day = 1; day <= 31; day++)
-          $('#day-drop').append("<option value='" + day + "'>" + day + "</option>");        
+          $('#day-drop').append("<option value='" + day + "'>" + day + "</option>");
         for(var year = 2018; year >= 1960; year--)
           $('#year-drop').append("<option value='" + year + "'>" + year + "</option>");
       }
-      
+
       function calcNumDaysByMonth() {
         var month = $('#month-drop').val();
         var year = $('#year-drop').val();
@@ -48,7 +43,7 @@
         else
           $('#leap-year-label').hide();
       }
-      
+
       function makeLeapYearChanges() {
         var year = $('#year-drop').val();
         var month = $('#month-drop').val();
@@ -76,7 +71,7 @@
         var fname = $('#firstname-tbox').val().trim();
         var errors = [];
         var isPlural = (fname.length -15) === 1 ? 'character' : 'characters';
-        
+
         if(fname === "")
           errors.push('Required');
         else if(fname.length > 15)
@@ -87,12 +82,12 @@
 
         return errors;
       }
-      
+
       function valLastName() {
         var lname = $('#lastname-tbox').val().trim();
         var errors = [];
         var isPlural = (lname.length -15) === 1 ? 'character' : 'characters';
-        
+
         if(lname === "")
           errors.push('Required');
         else if(lname.length > 15)
@@ -103,12 +98,12 @@
 
         return errors;
       }
-      
+
       function valUserName() {
         var user = $('#username-tbox').val().trim();
         var errors = [];
         var isPlural = (user.length -10) === 1 ? 'character' : 'characters';
-        
+
         if(user === "")
           errors.push('Required');
         else if(user.length > 10)
@@ -119,13 +114,13 @@
 
         return errors;
       }
-      
+
       function valPwd() {
         var pwd = $('#password-tbox').val().trim();
         var cpwd = $('#confirm-password-tbox').val().trim();
         var errors = [];
         var isPlural = (6-pwd.length) === 1 ? 'character' : 'characters';
-        
+
         if(pwd === "" || cpwd === "")
           errors.push('Required');
         else if(pwd.length < 6)
@@ -134,10 +129,11 @@
         if(pwd != cpwd)
           errors.push('Passwords do not match.');
 
+        console.log('pwd', errors);
         return errors;
       }
 
-       
+
       // in here set the border colors green is valid red is not valid
       function valSubmission() {
         $('#error-section-info').empty();
@@ -146,230 +142,82 @@
         var unameErrors = valUserName();
         var pwdErrors = valPwd();
         var totalErrors = fnameErrors.length + lnameErrors.length + unameErrors.length + pwdErrors.length;
-        console.log('total errors ', totalErrors);
-        
+        console.log(totalErrors);
+
         if(totalErrors > 0)
           $('#error-section').show();
         else
           $('#error-section').hide();
 
         if(fnameErrors.length > 0) {
-          $('#firstname-tbox').addClass('input-error');
-          $('#firstname-tbox').removeClass('input-success');
           $('#error-section-info').append("<div class='error-sub-section' id='fname-error-section'></div>");
           $('#fname-error-section').append("<span class='error-sub-label' id='fname-error-sub-label'>First Name:</span>");
           $('#fname-error-section').append("<span class='error-sub-info'>" + fnameErrors[0] + "</span>");
         }
-        else {
-          $('#firstname-tbox').removeClass('input-error');
-          $('#firstname-tbox').addClass('input-success');
-        }
-          
         if(lnameErrors.length > 0) {
-          $('#lastname-tbox').addClass('input-error');
-          $('#lastname-tbox').removeClass('input-success');                
           $('#error-section-info').append("<div class='error-sub-section' id='lname-error-section'></div>");
           $('#lname-error-section').append("<span class='error-sub-label' id='lname-error-sub-label'>Last Name:</span>");
           $('#lname-error-section').append("<span class='error-sub-info'>" + lnameErrors[0] + "</span>");
         }
-        else {
-          $('#lastname-tbox').removeClass('input-error');
-          $('#lastname-tbox').addClass('input-success');      
-        }
-
         if(unameErrors.length > 0) {
-          $('#username-tbox').addClass('input-error');
-          $('#username-tbox').removeClass('input-success');     
           $('#error-section-info').append("<div class='error-sub-section' id='unameErrors-error-section'></div>");
           $('#unameErrors-error-section').append("<span class='error-sub-label' id='unameErrors-error-sub-label'>Username:</span>");
             $('#unameErrors-error-section').append("<span class='error-sub-info'>" + unameErrors[0] + "</span>");
         }
-        else {
-          $('#username-tbox').removeClass('input-error');
-          $('#username-tbox').addClass('input-success');               
-        }
-
         if(pwdErrors.length > 0) {
-          $('#password-tbox').addClass('input-error');
-          $('#confirm-password-tbox').addClass('input-error');
-          $('#password-tbox').removeClass('input-success');
-          $('#confirm-password-tbox').removeClass('input-success');
-          
           $('#error-section-info').append("<div class='error-sub-section' id='pwdErrors-error-section'></div>");
           $('#pwdErrors-error-section').append("<span class='error-sub-label' id='pwdErrors-error-sub-label'>Password:</span>");
           $('#pwdErrors-error-section').append("<span class='error-sub-info'>" + pwdErrors[0] + "</span>");
         }
-        else {
-          $('#password-tbox').removeClass('input-error');
-          $('#confirm-password-tbox').removeClass('input-error');
-          $('#password-tbox').addClass('input-success');
-          $('#confirm-password-tbox').addClass('input-success');
-        }
-        
+
         return (totalErrors === 0) ? true: false;
       }
 
-      function resetModal() {
-        // clear all text boxes, reset all fields. 
-        // clear errorsS
-        initDropdown();
-        $('#error-section-info').empty();
-        $('#error-section').hide();
-        $('#leap-year-label').hide();
-        $('#signout-banner-section').hide();
-        $('#myaccount-banner-section').hide();
-        $('#mycart-banner-section').hide();
-        $('#signout-banner-section').hide();
-        $('#myaccount-banner-section').hide();
-        $('#mycart-banner-section').hide();
-        $('.field').val("").removeClass('input-error').removeClass('input-success');
-      }
-      
-      function getUserData() {
-        var userData = {
-          fname: $('#firstname-tbox').val() ,
-          lname: $('#lastname-tbox').val() ,
-          month: $('#month-drop').val(),
-          day: $('#day-drop').val(),
-          year: $('#year-drop').val(),
-          username: $('#username-tbox').val(),
-          password: $('#password-tbox').val(),
-        }
-        return userData;
-      }
-      
-      function signIn(userData) {
-        console.log('userData', userData.username);
-        $('#greetings-label').val('Hi '+userData.username+'!');
-        $('.logged-in').show();
-        $('.logged-out').hide();
-      }
-      
-      function signIn() {
-        $('#greetings-label').text('Hi '+$('#username-banner-tbox').val().trim()+'!');
-        $('.logged-in').show();
-        $('.logged-out').hide();
-      }
-      
-      function signOut() {
-        $('#username-banner-tbox').val("");
-        $('#password-banner-tbox').val("");
-        $('.logged-in').hide();
-        $('.logged-out').show();
+      function clearModal() {
+        // clear all text boxes, reset all fields.
+        // clear errors
       }
 
       $(document).ready(function(){
-        resetModal();
+        initDropdowns();
+        $('#error-section-info').empty();
+        $('#error-section').hide();
+        $('#leap-year-label').hide();
 
         $('#month-drop').change(function() {
           calcNumDaysByMonth();
-        });        
-        
+        });
+
         $('#year-drop').change(function() {
           makeLeapYearChanges();
-        }); 
-        
+        });
+
         $('#account-creation-form').submit(function() {
-          if(valSubmission()){
-            var userData = getUserData();
-            console.log('userData', userData);
-            $.ajax({
-              type: "POST",
-              url: "AccountCreation-handle.php",
-              data: {fname:userData.fname, lname:userData.lname, month:userData.month, day:userData.day, year:userData.year, username:userData.username, password:userData.password},
-              dataType: "JSON"
-            });
-            $('#close-signup-modal').trigger('click');
-            signIn(userData);
-          }
-          return false;
+          return valSubmission();
         });
 
-        $('#login-banner-btn').off('click').on('click', function() {
-            signIn()
-        });
-
-        $('#signup-banner-btn').off('click').on('click', function() {
-          resetModal();
-        });
-
-        $('#signout-banner-btn').off('click').on('click', function() {
-          signOut();
-
-        });
-        
-        $('#close-signup-modal').off('click').on('click', function(){
-          resetModal();
-        });
       });
 
+
     </script>
+
+
+
 </head>
 <body>
-  <!-- Banner -->
-  <div class='container' id='out-banner-container'>
-    <div class='row' id='banner-row'>
-
-      <div class='banner-section' id='logo-banner-section'>
-        <a href='Home.php'>
-          <img src='../IMGS/Logo.png' alt='Logo' class='foreach-logo'  id='banner-logo'>
-        </a>
-      </div>
-
-      <!-- Before Login -->
-      <div class='banner-section' id='home-banner-section'>
-        <a href='Home.php' class='logged-out-banner-section banner-nav-link' id='home-banner-nav-link'>Home</a>
-      </div>
-
-      <div class='banner-section' id='store-banner-section'>
-        <a href='Store.php' class='logged-out-banner-section banner-nav-link' id='store-banner-nav-link'>Store</a>
-      </div>
-
-      <div class='logged-out banner-section' id='signup-banner-section'>
-        <button type='button' class='logged-out-banner-section banner-nav-btn' data-toggle='modal' id = 'signup-banner-btn' data-target='#accountCreationModal'>Sign Up</button>
-      </div> 
-
-      <div class='logged-out banner-section' id='login-banner-section'>
-        <button class='logged-out-banner-section banner-nav-btn' id='login-banner-btn'>Login</button>
-      </div> 
-
-      <div class='logged-out banner-section' id='password-banner-section'>
-        <input type='text' class='logged-out-banner-section banner-nav-tbox' id='password-banner-tbox' placeholder='Enter Password'>
-      </div>
-
-      <div class='logged-out banner-section' id='username-banner-section'>
-        <input type='text' class='logged-out-banner-section banner-nav-tbox' id='username-banner-tbox' placeholder='Enter Username'>
-      </div>
-
-      <!-- After Login -->
-      <div class='logged-in banner-section' id='mycart-banner-section'>
-        <a href='Order.php' class='banner-nav-link' id='mycart-banner-nav-link'>My Cart</a>
-      </div>
-
-      <div class='logged-in banner-section' id='myaccount-banner-section'>
-        <a href='Account.php' class='banner-nav-link' id='myaccount-banner-nav-link'>My Account</a>
-      </div>
-      
-      <div class='logged-in banner-section' id='signout-banner-section'>
-        <p id='greetings-label'></p>
-        <button class='banner-nav-btn' id='signout-banner-btn'>Sign Out</button>
-      </div>
-
-    </div> <!-- End of .row -->
-  </div> <!-- End of #out-banner-cont -->
-  
-  <!-- Account Creation Modal -->
-  <form id='account-creation-form' action='Home.php' method='post'>
+  <h2>Account Creation Form</h2>
+  <button type='button' class='btn btn-info' data-toggle='modal' data-target='#accountCreationModal' onclick=''>New Account</button> <!-- Trigger the modal with a button -->
+  <form id='account-creation-form' action='AccountCreation-handle.php' method='post'>
     <div class='container'>
       <div class='modal fade' id='accountCreationModal' role='dialog'> <!-- Modal -->
-        <div class='modal-dialog'> 
+        <div class='modal-dialog'>
           <div class='modal-content'>
-            <div class='modal-header' id='ac-modal-header'>
-              <button type='button' class='close' data-dismiss='modal' id='close-signup-modal'>&times;</button>
+            <div class='modal-header'>
+              <button type='button' class='close' data-dismiss='modal'>&times;</button>
               <h2 class='modal-title' align='center'>Create Account</h2>
             </div> <!-- End of .modal-header -->
             <div class='modal-body' id='body-section'>
-              <div class='row' id='ac-row'>
+              <div class='row'>
                 <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12' id='personal-info-section'>
                   <div class='col-lg-12' id='firstname-container'> <!-- first name -->
                     <p class='field-label' id='firstname-label'>First Name:</p>
@@ -394,7 +242,7 @@
                 <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12' id='account-info-section'>
                   <div class='col-lg-12' id='username-container'> <!-- username -->
                     <p class='field-label' id='username-label'>Username:</p>
-                    <input type='text' class='field' id='username-tbox' name='username' placeholder='Big Cat'>
+                    <input type='text' class='field' id='username-tbox'  name='username' placeholder='Big Cat'>
                   </div>
                   <div class='col-lg-12' id='password-container'> <!-- password -->
                     <p class='field-label' id='password-label'>Password:</p>
@@ -424,4 +272,35 @@
 
 </body>
 </html>
+<!-- -->
 
+
+
+<?php
+
+/*
+
+*/
+?>
+
+<?php
+/*
+
+      function toggleShowPassword() {
+
+        var tboxValue = $('#password-tbox').val(): tboxValue = $('#shown-password-tbox').val();
+        pwdTboxValue = $().
+        userInput = pwdTboxValue !== "" ? true: false;                                                   // :
+        console.log(userInput);
+        // confPwdTboxValue =
+
+        console.log('value', tboxValue);
+        $('#shown-password-tbox').toggle().val(pwdTboxValue);
+        $('#shown-confirm-password-tbox').toggle().val(pwdTboxValue);
+      }
+
+                          <!-- <input type='checkbox' id='show-password-cbox'> -->
+                    <!-- <span id='show-password-label'>show</span> -->
+                                      <!-- <input type='password' class='field' id='hidden-confirm-password-tbox'> -->
+                                                        <!-- <input type='password' class='field' id='hidden-password-tbox'> -->
+?>
