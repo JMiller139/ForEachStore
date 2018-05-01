@@ -231,7 +231,7 @@
   </script>
 </head>
 <body class='fe-bg-color'>
-<form id = "submit-order-form" action = "" onclick="valNameOnCard()">
+<form id = "submit-order-form" onsubmit="Home.php" onclick="valNameOnCard()">
 <h2>Checkout</h2>
   <div class="checkoutPad">
     <div class="container">
