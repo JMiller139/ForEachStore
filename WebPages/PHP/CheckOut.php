@@ -5,8 +5,29 @@
   <title>Checkout</title>
   <link href="../CSS/checkOut.css" rel="stylesheet" type="text/css"/>
   <meta name='viewport' content='width=device-width, initial-scale=1'>
-  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
   <script>
+  function pushMethod(str) {
+    if (str == "") {
+        document.getElementById("Pushed").innerHTML = "";
+        return;
+    } else {
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("Pushed").innerHTML = this.responseText;
+            }
+        };
+        xmlhttp.open("POST","CheckOut-handle.php?ctype="+str,true);
+        xmlhttp.send();
+    }
+}
+
     function valNameOnCard(){
       var name = $('#cname').val().trim();
       var errors = [];
@@ -63,7 +84,6 @@
       }
       return errors;
     }
-    }
     function valEmail(){
       var eml = $('#email').val().trim();
       var errors = [];
@@ -77,7 +97,6 @@
         errors.push('email must follow the name@email.com format.');
       }
       return errors;
-    }
     }
     function valAddress(){
       var addrs = $('#adr').val().trim();
@@ -211,7 +230,7 @@
   </script>
 </head>
 <body>
-<form id = "submit-order-form" action = "">
+<form id = "submit-order-form" action = "" onclick="valNameOnCard()">
 <h2>Checkout</h2>
   <div class="checkoutPad">
     <div class="container">
@@ -224,7 +243,7 @@
       <div class = "cardPad">
         <h3>Payment Info</h3>
         <div class = "dropdownContainer">
-          <select name = "Cards" onchange="showUser(this.value)">
+          <select name = "Cards" onchange="pushMethod(this.value)">
             <option value="">Select a Card Type:</option>
             <option value="Visa">Visa</option>
             <option value="Master Card">Master Card</option>
@@ -257,6 +276,7 @@
     <div id='errors'>
       <p id='error-info'></p>
     </div>
+    <div id='Pushed'></div>
       <input type="submit" value="Complete Checkout" class="button">
     </div>
   </div>
