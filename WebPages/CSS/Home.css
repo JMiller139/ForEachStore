@@ -1,48 +1,82 @@
+body {
+  background-color: #525252;
+  color: white;
+}
+
 .welcomelable{
   text-align: center;
   font-size: 40px;
   font-weight: bold;
 }
-.catagories{
-  margin-left: 50px;
-  font-size: 25px;
-}
-div.scrollmenu {
-    overflow: auto;
-    white-space: nowrap;
-    width: 75%;
-    margin-left: 150px;
+
+#home-page-header{
+  color: white;
+  font-size: 66px;
 }
 
-div.scrollmenu a {
+.cat-label{
+  font-size: 40px;
+  margin-bottom: -17px;
+}
+
+.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+    width: 90%;
+}
+
+/* div.scrollmenu a {
     display: inline-block;
     text-align: center;
     padding: 14px;
     text-decoration: none;
+    width: 86%;
+} */
+
+#game_detail {
+  background-color: #525252;
+  color: white;
+  padding-top: 0px;
+  /* padding-right: 10px; */
+  padding-bottom: 0px;
+  /* margin-right: 0px; */
+  /* padding-left: 0px; */
 }
 
-div.scrollmenu a:hover {
-    background-color: green;
-}
 .row{
-    width: 100%;
+  width: 100%;
 }
 .gInfo{
-    /* margin-top: 40px; */
-    font-size: 18px;
+  font-size: 18px;
+  margin-left: -60px;
 }
-#gInfoTop{
-    font-size: 18px;
-}
-.modal-header{
-    background-color: forestgreen;
-}
-.modal-body{
-    background-color: snow;
-}
+
 .modal-footer{
-    background-color: forestgreen;
+  background-color: #525252;
 }
 #gImage{
-    padding-top: 23px;
+  padding-top: 23px;
+}
+#home-header {
+  font-weight: bold;
+}
+#home-add-to-cart {
+  padding-bottom: 0px;
+}
+.game-info-label {
+  font-size: 23px;
+  margin-bottom: 20px;
+}
+
+#game-info{
+  margin-top: 70px;
+  font-size: 20px;
+}
+.modal-labels {
+  margin-bottom: 20px;
+  /* padding-bottom: 20px; */
+}
+
+#free-scroll-bar {
+  margin-bottom: 170px;
 }

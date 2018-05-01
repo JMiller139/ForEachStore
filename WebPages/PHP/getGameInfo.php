@@ -1,4 +1,25 @@
 <?php
+  function stringifyDate($release_date) {
+    $fmtDate = "";
+    $whiteSpaceCnt = 0;
+    
+    for($i=0; $i < strlen($release_date); $i++){
+      $ch = $release_date[$i];
+      if(($ch >= 'a' && $ch <= 'z') || ($ch >= 'A' && $ch <= 'Z') || ($ch >='0' && $ch <= '9')){
+        $fmtDate .= $ch;
+      }
+      else if($ch === ' ') {
+        $whiteSpaceCnt++;
+        if($whiteSpaceCnt > 1) {$fmtDate .= ',' . $ch;}
+        else {$fmtDate .= $ch;}
+      }
+    }
+    return $fmtDate;
+  }
+
+?>
+
+<?php
 
     $output = '';
     $connect = mysqli_connect('localhost', 'proj1', 'foreach', 'proj1');
@@ -20,40 +41,40 @@
     $query = "SELECT * FROM Game_Platforms WHERE Game_ID = '".$_POST['game_id']."'";
     $result = mysqli_query($connect,$query);
     while ($row = mysqli_fetch_array($result)){
-        $platfroms .= $row[1]." ";
+        $platforms .= $row[1]." ";
     }
     $output .= '<div class="row">
                     <div class="col-lg-6 col-md-6" id="game-pic">
                         <div class="col-lg-12" id="game-image">
                         <p id="gImage">
-                        <img src="'.$src.'" alt="'.$title.'" height="400px" width="325px">
+                        <img src="'.$src.'" alt="'.$title.'" height="405px" width="325px">
                         </p>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6" id="game-info">
-                        <div class="col-lg-12" id="genre-contanier">
-                            <p id="gInfoTop">Genre: </p>
-                            <p id="genre">'.$genre.'</p>
+                        <div class="modal-labels col-lg-12" id="genre-contanier">
+                            <span class="game-info-label gInfoTop gInfo fe-blue fe-bold">Genre: </span>
+                            <span class="game-info" id="genre">'.$genre.'</span>
                         </div>
-                        <div class="col-lg-12" id="platforms-contanier">
-                            <p class="gInfo">Platforms: </p>
-                            <p id="genre">'.$platfroms.'</p>
+                        <div class="modal-labels col-lg-12" id="platforms-contanier">
+                            <span class="game-info-label  gInfo fe-blue fe-bold">Platforms: </span>
+                            <span class="game-info" id="platforms">'.$platforms.'</span>
                         </div>
-                        <div class="col-lg-12" id="publisher-contanier">
-                            <p class="gInfo">Developer: </p>
-                            <p id="genre">'.$developer.'</p>
+                        <div class="modal-labels col-lg-12" id="publisher-contanier">
+                            <span class="game-info-label  gInfo fe-blue fe-bold">Developer: </span>
+                            <span class="game-info" id="developer">'.$developer.'</span>
                         </div>
-                        <div class="col-lg-12" id="release-contanier">
-                        <p class="gInfo">Release Date: </p>
-                        <p id="genre">'.$release_date.'</p>
+                        <div class="modal-labels col-lg-12" id="release-contanier">
+                        <span class="game-info-label gInfo fe-blue fe-bold">Release Date: </span>
+                        <span class="game-info" id="release-date">'.stringifyDate($release_date).'</span>
                     </div>
-                        <div class="col-lg-12" id="rating-contanier">
-                            <p class="gInfo">Rating: </p>
-                            <p id="genre">'.$rating.'</p>
+                        <div class="modal-labels col-lg-12" id="rating-contanier">
+                            <span class="game-info-label  gInfo fe-blue fe-bold">Rating: </span>
+                            <span class="game-info" id="rating">'.$rating.'</span>
                         </div>
-                        <div class="col-lg-12" id="price-contanier">
-                            <p class="gInfo">Price: </p>
-                            <p id="genre">'.$price.'</p>
+                        <div class="modal-labels col-lg-12" id="price-contanier">
+                            <span class="game-info-label  gInfo fe-blue fe-bold">Price: </span>
+                            <span class="game-info" id="price">$'.$price.'</span>
                         </div>
                     </div>
                 </div>';

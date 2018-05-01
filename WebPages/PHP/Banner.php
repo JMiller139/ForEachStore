@@ -363,7 +363,7 @@
       <div class='modal fade' id='accountCreationModal' role='dialog'> <!-- Modal -->
         <div class='modal-dialog'> 
           <div class='modal-content'>
-            <div class='modal-header'>
+            <div class='modal-header' id='ac-modal-header'>
               <button type='button' class='close' data-dismiss='modal' id='close-signup-modal'>&times;</button>
               <h2 class='modal-title' align='center'>Create Account</h2>
             </div> <!-- End of .modal-header -->
