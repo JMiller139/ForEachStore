@@ -271,7 +271,9 @@
       $('#account-creation-form').submit(function() {
         if(valSubmission()){
           var userData = getUserData();
+          var userName = userData.username;
           console.log('userData', userData);
+          console.log(userName);
           $.ajax({
             type: "POST",
             url: "AccountCreation-handle.php",
@@ -440,7 +442,7 @@
     <?php
       while($row = mysqli_fetch_array($result)){
        ?>
-      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='125' width='175'></button>       
+      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='175' width='225'></button>       
     <?php
       }
     ?>
@@ -456,7 +458,7 @@
       $result = mysqli_query($connect, $query);
       while($row = mysqli_fetch_array($result)){
        ?>
-      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='125' width='175'></button>       
+      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='175' width='225'></button>       
     <?php
       }
     ?>
@@ -468,7 +470,7 @@
       $result = mysqli_query($connect, $query);
       while($row = mysqli_fetch_array($result)){
        ?>
-      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='125' width='175'></button>       
+      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='175' width='225'></button>       
     <?php
       }
     ?>
