@@ -1,15 +1,21 @@
 #out-banner-container {
+  background-color: #525252;
   border-color: black; 
   border-style: solid;
   border-top-width: 0px;
   border-right-width: 2px;
   border-left-width: 2px;
   border-bottom-width: 2px;
+  padding-right: 0px;
 }
 
 .row {
   width: 100%;
-  /* background-color: lightblue; */
+  background-color: #525252;
+}
+
+#ac-row{
+  background-color: white;
 }
 
 .banner-section {
@@ -19,6 +25,14 @@
 .banner-nav-link {
   display: inline-block;
   font-size: 20px;
+  text-decoration: none;
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 26px;
+}
+.banner-nav-link:hover {
+  color: white;
+  background-color: #51cbf1;
   text-decoration: none;
 }
 
@@ -45,33 +59,8 @@
   margin-right: 10px;
 }
 
-#store-banner-section {
-
-}
-
 #greetings-label {
   font-weight: bold;
-}
-
-#home-banner-nav-link {
-  color: black;
-}
-
-#store-banner-nav-link {
-  color: black;
-}
-
-#store-banner-nav-link:hover {
-  color: white;
-  background-color: black;
-  font-size: 26px;
-  text-decoration: none;
-}
-#home-banner-nav-link:hover {
-  color: white;
-  background-color: black;
-  font-size: 26px;
-  text-decoration: none;
 }
 
 #error-section {
@@ -146,28 +135,15 @@
   margin-left: 8px;
 }
 
-#myaccount-banner-nav-link {
-  color: black;
-}
-
-#mycart-banner-nav-link {
-  color: black;
-}
-
-#myaccount-banner-nav-link:hover {
-  color: white;
-  background-color: black;
-  font-size: 26px;
-  text-decoration: none;
-}
-#mycart-banner-nav-link:hover {
-  color: white;
-  background-color: black;
-  font-size: 26px;
-  text-decoration: none;
-}
-
 #greetings-label {
   margin-bottom: -1px;
   margin-top: -5px;
+  color: white;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.logged-out-banner-section{
+  margin-top: 5px;
 }

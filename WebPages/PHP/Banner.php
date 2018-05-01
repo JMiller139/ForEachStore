@@ -275,7 +275,7 @@
 <body>
   <!-- Banner -->
   <div class='container' id='out-banner-container'>
-    <div class='row'>
+    <div class='row' id='banner-row'>
 
       <div class='banner-section' id='logo-banner-section'>
         <a href='Home.php'>
@@ -285,27 +285,27 @@
 
       <!-- Before Login -->
       <div class='banner-section' id='home-banner-section'>
-        <a href='Home.php' class='banner-nav-link' id='home-banner-nav-link'>Home</a>
+        <a href='Home.php' class='logged-out-banner-section banner-nav-link' id='home-banner-nav-link'>Home</a>
       </div>
 
       <div class='banner-section' id='store-banner-section'>
-        <a href='Store.php' class='banner-nav-link' id='store-banner-nav-link'>Store</a>
+        <a href='Store.php' class='logged-out-banner-section banner-nav-link' id='store-banner-nav-link'>Store</a>
       </div>
 
       <div class='logged-out banner-section' id='signup-banner-section'>
-        <button type='button' class='banner-nav-btn' data-toggle='modal' id = 'signup-banner-btn' data-target='#accountCreationModal'>Sign Up</button>
+        <button type='button' class='logged-out-banner-section banner-nav-btn' data-toggle='modal' id = 'signup-banner-btn' data-target='#accountCreationModal'>Sign Up</button>
       </div> 
 
       <div class='logged-out banner-section' id='login-banner-section'>
-        <button class='banner-nav-btn' id='login-banner-btn'>Login</button>
+        <button class='logged-out-banner-section banner-nav-btn' id='login-banner-btn'>Login</button>
       </div> 
 
       <div class='logged-out banner-section' id='password-banner-section'>
-        <input type='text' class='banner-nav-tbox' id='password-banner-tbox' placeholder='Enter Password'>
+        <input type='text' class='logged-out-banner-section banner-nav-tbox' id='password-banner-tbox' placeholder='Enter Password'>
       </div>
 
       <div class='logged-out banner-section' id='username-banner-section'>
-        <input type='text' class='banner-nav-tbox' id='username-banner-tbox' placeholder='Enter Username'>
+        <input type='text' class='logged-out-banner-section banner-nav-tbox' id='username-banner-tbox' placeholder='Enter Username'>
       </div>
 
       <!-- After Login -->
@@ -336,7 +336,7 @@
               <h2 class='modal-title' align='center'>Create Account</h2>
             </div> <!-- End of .modal-header -->
             <div class='modal-body' id='body-section'>
-              <div class='row'>
+              <div class='row' id='ac-row'>
                 <div class='col-lg-6 col-md-6 col-sm-6 col-xs-12' id='personal-info-section'>
                   <div class='col-lg-12' id='firstname-container'> <!-- first name -->
                     <p class='field-label' id='firstname-label'>First Name:</p>
