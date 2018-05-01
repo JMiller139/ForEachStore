@@ -35,9 +35,11 @@ $result = mysqli_query($connect, $query);
       <p><?php listOrder();?>
         <?php
           while($row = mysqli_fetch_array($result)){
-           ?>
-          <button name='delete' class='delete-order' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='125' width='175'></button>
-        <?php
+            ?>
+          <button name='delete' class='delete-order' id='<?php echo $row['Game_ID']?>'>Delete</button>
+          <?php
+        }
+      ?>
       </p>
 
     </div>
