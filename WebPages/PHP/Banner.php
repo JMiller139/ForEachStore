@@ -190,6 +190,7 @@
         $('#signout-banner-section').hide();
         $('#myaccount-banner-section').hide();
         $('#mycart-banner-section').hide();
+        $('.field').val("");
       }
       
       function getUserData() {
