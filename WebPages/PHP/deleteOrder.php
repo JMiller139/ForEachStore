@@ -1,6 +1,6 @@
 <?php include 'Order.css';
 function deleteGame(){
-  $id = $_POST['Game_ID'];
+  $id = $_POST['game_ID'];
   $servername = "localhost";
   $username = "proj1";
   $password = "foreach";

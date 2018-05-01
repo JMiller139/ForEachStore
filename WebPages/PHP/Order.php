@@ -1,6 +1,8 @@
 <?php include 'getOrder.php';
 $connect = mysqli_connect("localhost", "proj1", "foreach", "proj1");
-$query = "SELECT * FROM Games";
+$cust = $_POST["Cust_ID"];
+$ordr = $_POST["Order_ID"];
+$query = "SELECT * FROM Orders WHERE Customer_ID = '$cust' AND Order_ID = '$ordr'";
 $result = mysqli_query($connect, $query);
 ?>
 <!DOCTYPE html>
@@ -18,10 +20,9 @@ $result = mysqli_query($connect, $query);
         $.ajax({
           url:"deleteOrder.php",
           method:"post",
-          data:{game_id:Game_id},
+          data:{game_id:game_id},
           dataType: "JSON"
         });
-        document.forms['myForm'].reset();
         window.location.reload();
       });
     });
