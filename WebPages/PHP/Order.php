@@ -318,7 +318,7 @@ $result = mysqli_query($connect, $query);
     });
   </script>
 </head>
-<body id='order-body'>
+<body  class='fe-bg-color'>
   <div class='container' id='out-banner-container'>
     <div class='row' id='banner-row'>
 
@@ -433,9 +433,9 @@ $result = mysqli_query($connect, $query);
   </form>
   <form action = "CheckOut.php" name ="myForm">
     <div id='order-page-section' align='center'>
-      <h1 align='center'>Review Order</h1>
+      <h1 style="color:#ffffff;" align='center'>Review Order</h1>
       <div class="orderTable" id='order-table'>
-        <h1>Games</h1>
+        <h1 style="color:#51cbf1;" >Games</h1>
         <p><?php listOrder();?>
           <?php/*
             while($row = mysqli_fetch_array($result)){

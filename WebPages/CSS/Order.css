@@ -1,4 +1,7 @@
-
+body {
+  background-color: #525252;
+  color: white;
+}
 #order-table{
   width: 50%;
   background-color: #DEE4E3;
@@ -57,7 +60,7 @@ a.remove{
   border-bottom-style: solid;
   border-bottom-color: red;
 
-} 
+}
 .order-row-section {
   border-bottom-color: darkslategray;
   border-bottom-style: dotted;
