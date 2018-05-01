@@ -15,9 +15,9 @@ $genre = $_POST['genre'];
 $servername = "localhost";
 $username = "proj1";
 $password = "foreach";
-$dnmae = "proj1";
+$dname = "proj1";
 
-$connect = mysqli_connect($servername, $username, $password, $dnmae);
+$connect = mysqli_connect($servername, $username, $password, $dname);
 if(mysqli_connect_error()) { echo "Error details: ", mysqli_connect_error(), "\n"; }
 
 $query = "INSERT INTO Games (Game_ID,Title,Release_Date,ESRB_Rating,Price,Icon) VALUES (0,'$title','$releaseDate','$esrbRating','$price','$icon')";

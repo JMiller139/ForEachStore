@@ -16,63 +16,71 @@
 
 <div class="container">
   <table id='filterTable'>
-    <div class="container">
       <tr>
         <form id='filterDropdownMenus' class="form-group">
-          <div class="container">
-            <select class='selectpicker' id="genreDropDown" name="genreDropDown">
-              <option value="Action-Adventure" id="Action-Adventure">Action-Adventure</option>
-              <option value="Action Roll-Playing" id="Action_Roll-Playing">Action Roll-Playing</option>
-              <option value="Shooter" id="Shooter">Shooter</option>
-              <option value="Single Player" id="Single_Player">Single Player</option>
-              <option value="Multiplayer" id="Multiplayer">Multiplayer</option>
-            </select>
-          </div>
+          <td>
+            <div>
+              <select class='selectpicker' id="genreDropDown" name="genreDropDown">
+                <option value="Action-Adventure" id="Action-Adventure">Action-Adventure</option>
+                <option value="Action Roll-Playing" id="Action_Roll-Playing">Action Roll-Playing</option>
+                <option value="Shooter" id="Shooter">Shooter</option>
+                <option value="Single Player" id="Single_Player">Single Player</option>
+                <option value="Multiplayer" id="Multiplayer">Multiplayer</option>
+              </select>
+            </div>
+          </td>
 
-          <div class="container">
-            <select class="selectpicker" id="ratingDropDown" name="ratingDropDown">
-              <option value="eC" id="eC">eC</option>
-              <option value="E" id="E"></option>
-              <option value="E10" id="E10"></option>
-              <option value="T" id="T"></option>
-              <option value="M" id="M"></option>
-              <option value="A" id="A"></option>
-              <option value="RP" id="RP"></option>
-            </select>
-          </div>
+          <td>
+            <div>
+              <select class="selectpicker" id="ratingDropDown" name="ratingDropDown">
+                <option value="eC" id="eC">eC</option>
+                <option value="E" id="E"></option>
+                <option value="E10" id="E10"></option>
+                <option value="T" id="T"></option>
+                <option value="M" id="M"></option>
+                <option value="A" id="A"></option>
+                <option value="RP" id="RP"></option>
+              </select>
+            </div>
+          </td>
 
-          <div class="container">
-            <select class="selectpicker" id="priceDropDown" name="priceDropDown">
-              <option value="$0.00 - $4.99" id="zeroToFive">$0.00 - $4.99</option>
-              <option value="$5.00 - $9.99" id="fiveToTen">$5.00 - $9.99</option>
-              <option value="$10.00 - $14.99" id="tenToFifteen">$10.00 - $14.99</option>
-              <option value="$20.00 - $29.99" id="twentyToThirty">$20.00 - $29.99</option>
-              <option value="$30.00 - $39.99" id="thirtyToFourty">$30.00 - $39.99</option>
-              <option value="$40.00 - $40.99" id="fourtyToFifty">$40.00 - $40.99</option>
-              <option value="$50.00 - $59.99" id="fiftyToSixty">$50.00 - $59.99</option>
-            <select>
-          <div>
+          <td>
+            <div>
+              <select class="selectpicker" id="priceDropDown" name="priceDropDown">
+                <option value="$0.00 - $4.99" id="zeroToFive">$0.00 - $4.99</option>
+                <option value="$5.00 - $9.99" id="fiveToTen">$5.00 - $9.99</option>
+                <option value="$10.00 - $14.99" id="tenToFifteen">$10.00 - $14.99</option>
+                <option value="$20.00 - $29.99" id="twentyToThirty">$20.00 - $29.99</option>
+                <option value="$30.00 - $39.99" id="thirtyToFourty">$30.00 - $39.99</option>
+                <option value="$40.00 - $40.99" id="fourtyToFifty">$40.00 - $40.99</option>
+                <option value="$50.00 - $59.99" id="fiftyToSixty">$50.00 - $59.99</option>
+              <select>
+            </div>
+          </td>
 
-          <div class="container">
-            <select class="selectpicker" id="platformDropDown" name="platformDropDown">
-              <option value="PC" id="PC">PC</option>
-              <option value="XBOX" id="XBOX">XBOX</option>
-              <option value="PLAYSTATION" id="PLAYSTATION"></option>
-            </select>
-          </div>
+          <td>
+            <div>
+              <select class="selectpicker" id="platformDropDown" name="platformDropDown">
+                <option value="PC" id="PC">PC</option>
+                <option value="XBOX" id="XBOX">XBOX</option>
+                <option value="PLAYSTATION" id="PLAYSTATION"></option>
+              </select>
+            </div>
+          </td>
 
           <td><input type='submit' class="btn btn-default" name='filterSearchButton' id='filterSearchBarButton' value='Search'></td>
+
         </form>
-      </div>
-      <div class="container">
-        <td id='searchBarCell'>
-          <form>
-            <input type="text" placeholder="Search..">
-            <input type='submit' class="btn btn-default" name='searchBarButton' id='searchBarButton' value='Search'>
-          </form>
-        </td>
-      </div>
-    </tr>
+        <div class="container">
+          <td id='searchBarCell'>
+            <form>
+              <input type="text" placeholder="Search..">
+              <input type='submit' class="btn btn-default" name='searchBarButton' id='searchBarButton' value='Search'>
+            </form>
+          </td>
+        </div>
+      </tr>
+
   </table>
 </div>
 

@@ -1,11 +1,9 @@
 #filterTable{
-  margin: auto;
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
   background-color: black;
-  padding-left: 70px;
-  padding-right: 70px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  /* add padding to make it look pretty*/
 }
 
 #searchBarCell{
@@ -26,5 +24,3 @@
   height: 175px;
   width: 225px;
 }
-
-/*<!-- need to create inline block css -->*/
