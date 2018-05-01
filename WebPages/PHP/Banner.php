@@ -179,7 +179,7 @@
 
       function resetModal() {
         // clear all text boxes, reset all fields. 
-        // clear errors
+        // clear errorsS
         initDropdown();
         $('#error-section-info').empty();
         $('#error-section').hide();
@@ -205,21 +205,10 @@
         return userData;
       }
       
-      // function test() {
-      //   var userData = getUserData();
-        
-      //   var year = userData.year + "";
-      //   var month = (userData.month > 0 && userData.month < 10) ? ("0" + userData.month) : (userData.month + "");
-      //   var day = (userData.day > 0 && userData.day < 10) ? ("0" + userData.day) : (userData.day + "");
-
-      //   alert(year + '-' + month + '-' + day);
-      // }
-
       function signIn(userData) {
         $('#greetings-label').text('Hi '+userData.username+'!');
         $('.logged-in').show();
         $('.logged-out').hide();
-
       }
       
       function signIn() {
@@ -235,7 +224,6 @@
         $('.logged-out').show();
       }
 
-
       $(document).ready(function(){
         resetModal();
 
@@ -248,7 +236,6 @@
         }); 
         
         $('#account-creation-form').submit(function() {
-          
           if(valSubmission()){
             var userData = getUserData();
             console.log('userData', userData);
@@ -258,37 +245,14 @@
               data: {fname:userData.fname, lname:userData.lname, month:userData.month, day:userData.day, year:userData.year, username:userData.username, password:userData.password},
               dataType: "JSON"
             });
-            // close modal
-            // test();
             $('#close-signup-modal').trigger('click');
             signIn(userData);
-
           }
-          // handle something here?
-          
           return false;
         });
 
         $('#login-banner-btn').off('click').on('click', function() {
-          
-          // if they can log in .. {
-          // $('#username-banner-section').hide();
-          // $('#password-banner-section').hide();
-          // $('#login-banner-section').hide();
-          // $('#signup-banner-section').hide();
-          // $('#signout-banner-section').show();
-          // $('#myaccount-banner-section').show();
-          // $('#mycart-banner-section').show();
             signIn()
-
-
-
-          // }
-          // else {
-
-          // }
-
-
         });
 
         $('#signup-banner-btn').off('click').on('click', function() {
@@ -297,22 +261,12 @@
 
         $('#signout-banner-btn').off('click').on('click', function() {
           signOut();
-          // $('#username-banner-section').show();
-          // $('#password-banner-section').show();
-          // $('#login-banner-section').show();
-          // $('#signup-banner-section').show();
-          // $('#signout-banner-section').hide();
-          // $('#myaccount-banner-section').hide();
-          // $('#mycart-banner-section').hide();
+
         });
         
         $('#close-signup-modal').off('click').on('click', function(){
           resetModal();
         });
-
-
-
-
       });
 
     </script>
