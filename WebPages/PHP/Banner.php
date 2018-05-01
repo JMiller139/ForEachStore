@@ -239,7 +239,8 @@
       }
       
       function signIn(userData) {
-        $('#greetings-label').text('Hi '+userData.username+'!');
+        console.log('userData', userData.username);
+        $('#greetings-label').val('Hi '+userData.username+'!');
         $('.logged-in').show();
         $('.logged-out').hide();
       }
