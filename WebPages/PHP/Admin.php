@@ -87,7 +87,16 @@
           window.location.reload();
         }
         else if(document.getElementById('edit').checked) {
+          $.ajax({
+            type: 'post',
+            data: {gtitle:title,rdate:releaseDate,esrbrate:esrbRating,price:price,icon:icon,developer:developer,publisher:publisher,platformPC:platformPC,platformXbox:platformXbox,platformPlay:platformPlay,genre:genre},
+            url: "editGame.php",
+            dataType: "JSON"
+          });
 
+          alert("Game Has Been Updated in the Store");
+          document.forms['myForm'].reset();
+          window.location.reload();
         }
 
     }
