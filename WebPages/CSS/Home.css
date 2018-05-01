@@ -22,7 +22,7 @@ body {
 .scrollmenu {
     overflow: auto;
     white-space: nowrap;
-    width: 80%;
+    width: 100%;
 }
 
 /* div.scrollmenu a {
