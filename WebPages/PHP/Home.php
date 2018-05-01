@@ -1,7 +1,6 @@
 <?php
   $connect = mysqli_connect("localhost", "proj1", "foreach", "proj1");
-  $query = "SELECT * FROM Games LIMIT 10";
-  $result = mysqli_query($connect, $query);
+  
 ?>
 
 <!DOCTYPE HTML5>
@@ -440,17 +439,19 @@
   <p class='cat-label fe-blue fe-bold'>Popular Games</p><br>
   <div class="scrollmenu" id='scroll1'>
     <?php
+      $query = "SELECT * FROM Games LIMIT 10";
+      $result = mysqli_query($connect, $query);
       while($row = mysqli_fetch_array($result)){
        ?>
-      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='175' width='225'></button>       
+      <input type="button" class='view_data' id='<?php echo $row['Game_ID']?>' style="background-image: url('<?php echo $row['Icon']?>'); border:none; background-repeat:no-repeat;background-size:100% 100%;height:175; width:225">       
     <?php
       }
     ?>
   </div><br><br>
-  <p class='cat-label fe-blue fe-bold'>New Games</p><br>
+  <!-- <p class='cat-label fe-blue fe-bold'>New Games</p><br>
   <div class="scrollmenu">
       
-  </div><br><br>
+  </div><br><br> -->
   <p class='cat-label fe-blue fe-bold'>Discounted Games</p><br>
   <div class="scrollmenu">
   <?php
@@ -458,7 +459,7 @@
       $result = mysqli_query($connect, $query);
       while($row = mysqli_fetch_array($result)){
        ?>
-      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='175' width='225'></button>       
+      <input type="button" class='view_data' id='<?php echo $row['Game_ID']?>' style="background-image: url('<?php echo $row['Icon']?>'); border:none; background-repeat:no-repeat;background-size:100% 100%;height:175; width:225">     
     <?php
       }
     ?>
@@ -470,7 +471,7 @@
       $result = mysqli_query($connect, $query);
       while($row = mysqli_fetch_array($result)){
        ?>
-      <button name='view' class='view_data' id='<?php echo $row['Game_ID']?>'><input type='image' src='<?php echo $row['Icon']?>' alt='<?php echo $row['Title']?>' height='175' width='225'></button>       
+       <input type="button" class='view_data' id='<?php echo $row['Game_ID']?>' style="background-image: url('<?php echo $row['Icon']?>'); border:none; background-repeat:no-repeat;background-size:100% 100%;height:175; width:225">
     <?php
       }
     ?>
